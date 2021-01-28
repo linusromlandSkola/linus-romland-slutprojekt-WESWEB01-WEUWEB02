@@ -11,11 +11,10 @@ namespace fileupload.Controllers
     [Route("/")]
     public class IndexController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult Get()
+        [HttpPost]
+        public ActionResult Post()
         {
-             Console.WriteLine(Request.Form.Files);
-           return Content("Tjosan NET");
+            return Content(Request.Form.Files[0].FileName);
         }
     }
 }
