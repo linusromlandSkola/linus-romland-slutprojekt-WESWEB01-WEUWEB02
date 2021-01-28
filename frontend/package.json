@@ -1,0 +1,27 @@
+{
+  "name": "fileupload-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for FileUpload",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "forever app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linusromland/FileUpload.git"
+  },
+  "author": "linusromland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linusromland/FileUpload/issues"
+  },
+  "homepage": "https://github.com/linusromland/FileUpload#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "forever": "^3.0.4"
+  }
+}
