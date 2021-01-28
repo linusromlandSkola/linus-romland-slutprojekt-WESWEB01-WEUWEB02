@@ -1,7 +1,6 @@
 # File Upload
 
 *** ***Currently in development*** ***
-File Upload in ASP.NET
 
 # License
 
