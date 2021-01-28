@@ -1,0 +1,27 @@
+{
+  "name": "fileupload",
+  "version": "1.0.0",
+  "description": "FileUpload",
+  "main": "app.js",
+  "scripts": {
+    "devStart": "nodemon app.js",
+    "start": "forever app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linusromland/FileUpload.git"
+  },
+  "author": "Linus Romland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linusromland/FileUpload/issues"
+  },
+  "homepage": "https://github.com/linusromland/FileUpload#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "forever": "^3.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
