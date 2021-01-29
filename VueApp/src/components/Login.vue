@@ -1,5 +1,7 @@
 <template>
-  <form id="theForm">
+  <div>
+    <h1>Login</h1>
+    <form id="theForm">
       <input
         type="text"
         placeholder="Username"
@@ -17,6 +19,7 @@
       <p id="errorText"></p>
       <input type="submit" class="fadeIn fourth" value="Log In" />
     </form>
+  </div>
 </template>
 
 <script>

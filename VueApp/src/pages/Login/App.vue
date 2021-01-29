@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>Login</h1>
     <Login v-if="haveAccount" />
     <Register v-else />
     <a id="changeFormBtn" @click="registerPage">{{ registerBtnText }}</a>

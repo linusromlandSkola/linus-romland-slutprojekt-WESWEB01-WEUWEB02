@@ -1,5 +1,7 @@
 <template>
-  <form id="theForm">
+  <div>
+    <h1>Register</h1>
+    <form id="theForm">
       <input type="text" placeholder="username" name="username" id="username" />
       <br />
       <input
@@ -19,6 +21,7 @@
       <p id="infoText"></p>
       <input type="submit" value="Register" />
     </form>
+  </div>
 </template>
 
 <script>
