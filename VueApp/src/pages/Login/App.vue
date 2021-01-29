@@ -1,22 +1,44 @@
 <template>
   <div id="app">
     <h1>Login</h1>
-    <Login />
+    <Login v-if="haveAccount" />
+    <Register v-else />
+    <button @click="registerPage">{{ registerBtnText }}</button>
   </div>
 </template>
 
 <script>
-import Login from '../../components/Login'
+import Login from "../../components/Login";
+import Register from "../../components/Register";
+
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Login
-  }
-}
+    Login,
+    Register,
+  },
+  data() {
+    return {
+      haveAccount: true,
+      registerBtnText: "Don't have an account?",
+    };
+  },
+  methods: {
+    registerPage() {
+      if (this.haveAccount) {
+        this.haveAccount = false;
+        this.registerBtnText = "Already have an account?";
+      } else {
+        this.haveAccount = true;
+        this.registerBtnText = "Don't have an account?";
+      }
+    },
+  },
+};
 </script>
 
 <style>
-*{
+* {
   margin: 0;
   padding: 0;
 }
