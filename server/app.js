@@ -12,7 +12,8 @@ const port = 3000;
 //Initializes the Store Varible for use with sessionstore
 //Connectes to MongoDB
 let store;
-connectToMongo("FileUpload");
+connectToMongo("FileUpload", "mongodb://mongo:27017") //Docker Mongo Connect
+//connectToMongo("FileUpload", "mongodb://localhost:27017/"); //Local Mongo Connect
 
 //Sets and uses dependencies etc.
 app.use(flash());
@@ -87,10 +88,10 @@ app.get("/logout", checkAuthenticated, (req, res) => {
   res.send("You are now logged out");
 });
 
-function connectToMongo(dbName) {
+function connectToMongo(dbName, connectURL) {
   if (fs.existsSync("mongoauth.json")) {
     const mongAuth = require("./mongoauth.json");
-    dBModule.cnctDBAuth(dbName);
+    dBModule.cnctDBAuth(dbName, connectURL);
     store = sessionstore.createSessionStore({
       type: "mongodb",
       authSource: "admin",
@@ -98,7 +99,7 @@ function connectToMongo(dbName) {
       password: mongAuth.pass,
     });
   } else {
-    dBModule.cnctDB(dbName);
+    dBModule.cnctDB(dbName, connectURL);
     store = sessionstore.createSessionStore({ type: "mongodb" });
   }
 }
