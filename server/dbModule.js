@@ -3,9 +3,9 @@ const ObjectID = require("mongodb").ObjectID;
 let db;
 
 //Connect to MongoDB With Authentication.
-exports.cnctDBAuth = (collectionname) => {
+exports.cnctDBAuth = (collectionname, connectURL) => {
   const mongAuth = require("./mongoauth.json");
-  mongoose.connect("mongodb://localhost:27017/" + collectionname, {
+  mongoose.connect(connectURL + collectionname, {
     auth: {
       authSource: "admin",
     },
@@ -23,8 +23,8 @@ exports.cnctDBAuth = (collectionname) => {
 };
 
 //Connect to MongoDB
-exports.cnctDB = (collectionname) => {
-  let dbLink = `mongodb://localhost/${collectionname}`;
+exports.cnctDB = (collectionname, connectURL) => {
+  let dbLink = connectURL + collectionname;
   mongoose.connect(dbLink, { useNewUrlParser: true, useUnifiedTopology: true });
 
   db = mongoose.connection;
