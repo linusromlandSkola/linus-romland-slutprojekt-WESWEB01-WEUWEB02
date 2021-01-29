@@ -1,3 +1,6 @@
+/*
+Distributed under the MIT License. See LICENSE for more information.
+*/
 module.exports = {
     pages: {
       index: {
