@@ -3,7 +3,7 @@
     <h1>Login</h1>
     <Login v-if="haveAccount" />
     <Register v-else />
-    <button @click="registerPage">{{ registerBtnText }}</button>
+    <a id="changeFormBtn" @click="registerPage">{{ registerBtnText }}</a>
   </div>
 </template>
 
@@ -48,5 +48,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+#changeFormBtn {
+  cursor: pointer;
 }
 </style>
