@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <input type="text" v-model="message"/>
-
+    <h1>tjos</h1>
   </div>
 </template>
 
@@ -27,3 +26,4 @@ export default {
   color: #2c3e50;
 }
 </style>
+

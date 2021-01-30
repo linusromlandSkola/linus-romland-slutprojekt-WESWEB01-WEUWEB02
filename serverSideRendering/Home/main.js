@@ -1,10 +1,7 @@
-import Vue from 'vue'
-import App from '../Home/App.vue'
-
-Vue.config.productionTip = false
-
-let app = new Vue({
-  render: h => h(App),
-}).$mount('#app')
-
-module.exports = app
+const Vue = require('vue')
+const fs = require("fs")
+module.exports = function createApp () {
+  return new Vue({
+    render: h => h(fs.readFileSync("./Home/App.vue")),
+  }).$mount('#app')
+}
