@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <h1>tjos</h1>
+    <h1>Hejsan svejsan</h1>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'App',
+  name: 'index',
   components: {
   },
 }
