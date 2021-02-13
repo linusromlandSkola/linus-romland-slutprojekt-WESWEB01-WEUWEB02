@@ -1,7 +1,10 @@
 const Vue = require('vue')
-const fs = require("fs")
-module.exports = function createApp () {
+//import Vue from 'vue'
+//import App from "./App.vue"
+const App = require('./App.vue')
+
+exports.createApp = () => {
   return new Vue({
-    template: `<div>The visited URL is: aaa</div>`
-  })
+    render: h => h(App),
+  }).$mount('#app')
 }

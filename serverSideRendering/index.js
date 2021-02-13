@@ -12,8 +12,8 @@ server.get('*', (req, res) => {
   const app = createApp()
   renderer
   .renderToString(app, (err, html) => {
-    console.log(app)
-    console.log(html);
+   /* console.log(app)
+    console.log(html);*/
     if (err) {
       res.status(500).end('Internal Server Error')
       return;
