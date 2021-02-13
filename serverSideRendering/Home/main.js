@@ -1,9 +1,11 @@
 const Vue = require('vue')
-//import Vue from 'vue'
-//import App from "./App.vue"
-const App = require('./App.vue')
+const fs = require("fs")
+//const App = require('./App.vue')
 
-exports.createApp = () => {
+module.exports = async function createApp () {
+  //let tmp = await fs.readFileSync("./Home/App.vue")
+  import App from "./Home/App.vue"
+  //console.log(tmp)
   return new Vue({
     render: h => h(App),
   }).$mount('#app')
