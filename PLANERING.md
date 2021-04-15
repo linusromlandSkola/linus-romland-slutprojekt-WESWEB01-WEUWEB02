@@ -19,8 +19,14 @@ Hemsidan kommer att använda många olika tekniker. Jag kommer att ha en backend
  - EJS
  - Bootstrap 5
  - TailwindCSS
+ - 
+## Databasens syfte
+
+Jag kommer att använda MongoDB för att spara information kring de uppladdade filerna. Det kommer att vara information kring var filen ligger på servern, när filen ska tas bort från server, vilket konto som laddade upp filen samt hur många gånger den har laddats ned. När en fil skall tas bort från servern för att den är för gammal alternativt för många nedladdningar så skall även all information kring den filen i databasen att försvinna.
 
 ## Färger och Fonts
 
 Färgerna jag kommer använda kommer att vara ganska neutrala. Om jag har tid kommer jag även att implementera Dark Mode som default välja det som ditt Operativ System har. (Det ska finnas en knapp att överskrida).
 De fonts jag kommer välja är vanliga fonter som Arial, Roboto eller liknande. 
+
+
