@@ -5,7 +5,6 @@ Since Firefox Send is officaly dead...
 
 ## What is it?
 This will be a file upload page that allows you to upload any file and availble for download (max 7 days after upload).
-It will have a secure login system with passportJS and allows you to password protect your uploads and set a maximum amount of downloads.
 <br>It will be built using NodeJS and use the MongoDB Database. 
 Live Demo will be available once the project is actually somewhat usefull.
 
