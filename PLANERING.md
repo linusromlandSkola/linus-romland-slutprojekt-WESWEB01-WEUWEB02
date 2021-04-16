@@ -30,3 +30,23 @@ Färgerna jag kommer använda kommer att vara ganska neutrala. Om jag har tid ko
 De fonts jag kommer välja är vanliga fonter som Arial, Roboto eller liknande. 
 
 
+## Målgrupp, Persona och Scenarios
+
+Målgruppen kommer vara ganska teknikintresserande som söker en sida att dela sina filer ut. Troligen 20-30 års-åldern.
+Det kommer troligen vara teknikinstresserande och ej mer "vanligt folk" då de kommer troligen välja någon mer "Big Tech" företag som Google samt att jag också kommer mer fokusera på de teknikintresserande. 
+
+### Persona:
+Anders
+22år / man 
+Utvecklare
+
+Han har problem då alla sidor att ladda upp filer idag har antingen massor med reklam eller
+är en del av "Big Tech Company" såsom Google, Microsoft eller Amazon.
+
+### Scenario:
+Anders har letat efter en sida att dela sina filer sedan Firefox Send dog.
+Han hittade sidan gemon en sökning på google. Den uppfyller hans krav där
+du enkelt kan ladda upp.
+
+
+
