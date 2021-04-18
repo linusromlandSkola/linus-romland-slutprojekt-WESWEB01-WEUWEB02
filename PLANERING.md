@@ -24,6 +24,20 @@ Hemsidan kommer att använda många olika tekniker. Jag kommer att ha en backend
 
 Jag kommer att använda MongoDB för att spara information kring de uppladdade filerna. Det kommer att vara information kring var filen ligger på servern, när filen ska tas bort från server, vilket konto som laddade upp filen samt hur många gånger den har laddats ned. När en fil skall tas bort från servern för att den är för gammal alternativt för många nedladdningar så skall även all information kring den filen i databasen att försvinna.
 
+## Ritning
+
+### Ladda Upp
+<a href="https://github.com/linusromland/FileUpload/blob/master/planingFiles/uploadFiles-UML.png" title="Upload File Diagram"><img src="https://raw.githubusercontent.com/linusromland/FileUpload/master/planingFiles/uploadFiles-UML.png" alt="Upload File Diagram" /></a>
+
+### Ladda Ned
+<a href="https://github.com/linusromland/FileUpload/blob/master/planingFiles/downloadFiles-UML.png" title="Download File Diagram"><img src="https://raw.githubusercontent.com/linusromland/FileUpload/master/planingFiles/downloadFiles-UML.png" alt="Download File Diagram" /></a>
+
+### Logga In
+<a href="https://github.com/linusromland/FileUpload/blob/master/planingFiles/loginAccount-UML.png" title="Login Diagram"><img src="https://raw.githubusercontent.com/linusromland/FileUpload/master/planingFiles/loginAccount-UML.png" alt="Login Diagram" /></a>
+
+### Registrera
+<a href="https://github.com/linusromland/FileUpload/blob/master/planingFiles/registerAccount-UML.png" title="Register Diagram"><img src="https://raw.githubusercontent.com/linusromland/FileUpload/master/planingFiles/registerAccount-UML.png" alt="Register Diagram" /></a>
+
 ## Färger och Fonts
 
 Färgerna jag kommer använda kommer att vara ganska neutrala. Om jag har tid kommer jag även att implementera Dark Mode som default välja det som ditt Operativ System har. (Det ska finnas en knapp att överskrida).
@@ -47,6 +61,4 @@ Han har problem då alla sidor att ladda upp filer idag har antingen massor med 
 Anders har letat efter en sida att dela sina filer sedan Firefox Send dog.
 Han hittade sidan gemon en sökning på google. Den uppfyller hans krav där
 du enkelt kan ladda upp.
-
-
 
