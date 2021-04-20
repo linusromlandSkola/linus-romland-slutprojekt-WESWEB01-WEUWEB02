@@ -27,6 +27,9 @@ Jag kommer att använda MongoDB för att spara information kring de uppladdade f
 ## Ritning
 Se [`RITNING.md`](https://github.com/linusromland/FileUpload/blob/master/planingFiles/RITNING.md)
 
+## Wireframes
+Se [`WIREFRAMES.md`](https://github.com/linusromland/FileUpload/blob/master/planingFiles/WIREFRAMES.md)
+
 ## Färger och Fonts
 
 Färgerna jag kommer använda kommer att vara ganska neutrala. Om jag har tid kommer jag även att implementera Dark Mode som default välja det som ditt Operativ System har. (Det ska finnas en knapp att överskrida).
