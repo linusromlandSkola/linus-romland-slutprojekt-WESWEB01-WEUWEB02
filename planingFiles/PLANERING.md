@@ -12,13 +12,13 @@ FileUpload ska bli en sida där du ska kunna ladda upp filer och enkelt dela dem
 
 ## Vilka tekniker?
 
-Hemsidan kommer att använda många olika tekniker. Jag kommer att ha en backend som använder [NodeJS](https://nodejs.org/en/) som kommer att koppla till en [MongoDB](https://www.mongodb.com/) Databas. Som View Engine kommer jag att använda [EJS](https://ejs.co/) och för design på front-end kommer jag använda [Bootstrap 5](https://getbootstrap.com/) alternativt [TailwindCSS](https://tailwindcss.com/).
+Hemsidan kommer att använda många olika tekniker. Jag kommer att ha en backend som använder NodeJS som kommer att koppla till en MongoDB Databas. Som View Engine kommer jag att använda EJS och för design på front-end kommer jag använda Bootstrap 5 alternativt TailwindCSS.
 
- - NodeJS
- - MongoDB
- - EJS
- - Bootstrap 5
- - TailwindCSS
+ - [NodeJS](https://nodejs.org/en/)
+ - [MongoDB](https://www.mongodb.com/)
+ - [EJS](https://ejs.co/)
+ - [Bootstrap 5](https://getbootstrap.com/)
+ - [TailwindCSS](https://tailwindcss.com/)
  
 ## Databasens syfte
 
