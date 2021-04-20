@@ -69,6 +69,7 @@ app.post(
 	})
 );
 
+//adds the loginroutes to /
 app.use("/", require("./routes/loginRoutes"));
 
 //Starts the server
