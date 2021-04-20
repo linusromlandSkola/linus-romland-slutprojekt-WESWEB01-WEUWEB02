@@ -1,5 +1,5 @@
 # My own ingnores
-
+.DS_Store
 dist/*
 
 # Logs
