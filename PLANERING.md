@@ -25,7 +25,7 @@ Hemsidan kommer att använda många olika tekniker. Jag kommer att ha en backend
 Jag kommer att använda MongoDB för att spara information kring de uppladdade filerna. Det kommer att vara information kring var filen ligger på servern, när filen ska tas bort från server, vilket konto som laddade upp filen samt hur många gånger den har laddats ned. När en fil skall tas bort från servern för att den är för gammal alternativt för många nedladdningar så skall även all information kring den filen i databasen att försvinna.
 
 ## Ritning
-Se ["RITNING.md"](https://github.com/linusromland/FileUpload/blob/master/RITNING.md)
+Se [`RITNING.md`](https://github.com/linusromland/FileUpload/blob/master/RITNING.md)
 
 ## Färger och Fonts
 
