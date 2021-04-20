@@ -20,6 +20,8 @@ Run `npm i` to install required dependencies. Then you could start the server us
 - `npm run oneStart` (This will start the server with node)
 - `npm run devStart` (This will start the server with nodemon)
 
+You can also change setting with `.env`. For more information check `.env File`
+
 ## .env File
 Before you start the server, you could configure a few things in a file called `.env`. 
 You need to create this file yourself and then you could copy the template below. 
