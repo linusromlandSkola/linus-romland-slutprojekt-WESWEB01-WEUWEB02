@@ -1,15 +1,17 @@
-function registerUser(username, password, errorBox, infoBox) {
+function registerUser(username, password, errorBox, infoBox, email) {
   let request = new XMLHttpRequest();
   let name = username;
   let pass = CryptoJS.MD5(password + name);
   request.open("POST", "/register", true);
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  request.send(`name=${name}&password=${pass}`);
+  request.send(`name=${name}&email=${email}&password=${pass}`);
   request.onreadystatechange = function () {
     infoBox.innerText = "";
     if (request.status == 409) {
       errorBox.innerText = "Username taken!";
-    } else if (request.status == 500) {
+    } else if (request.status == 410) {
+      errorBox.innerText = "Email taken!";
+    }else if (request.status == 500) {
       errorBox.innerText = "Error occured!";
     } else if (request.status == 201) {
       infoBox.innerText = "Created user";

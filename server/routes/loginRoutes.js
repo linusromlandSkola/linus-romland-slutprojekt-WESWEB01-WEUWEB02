@@ -9,13 +9,19 @@ module.exports = (function () {
 	router.post("/register", async (req, res) => {
 		try {
 			const userExist = await dBModule.findInDBOne(User, req.body.name);
-			if (userExist == null) {
+			const userEmailExist = await dBModule.findEmailInDB(User, req.body.email);
+
+			if (userExist == null && userEmailExist == null) {
 				dBModule.saveToDB(
-					login.createUser(req.body.name, req.body.password)
+					login.createUser(req.body.name,req.body.email, req.body.password)
 				);
 				res.sendStatus(201);
-			} else {
+			} else if(userExist) {
 				res.sendStatus(409);
+			}else if(userEmailExist) {
+				res.sendStatus(410);
+			}else{
+				res.sendStatus(500);
 			}
 		} catch {
 			res.sendStatus(500);

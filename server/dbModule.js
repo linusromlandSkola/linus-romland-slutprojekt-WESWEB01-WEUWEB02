@@ -22,6 +22,11 @@ exports.findInDBOne = async (Model, toFind) => {
 	return await Model.findOne({ name: toFind });
 };
 
+//Finds email in Database on the Model provided
+exports.findEmailInDB = async (Model, toFind) => {
+	return await Model.findOne({ email: toFind });
+};
+
 //Fins all of Model in Database
 exports.findInDB = async (Model) => {
 	return await Model.find({});
