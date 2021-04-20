@@ -33,7 +33,7 @@
 
 ## Ladda ned
 ### Desktop
-<a href="https://github.com/linusromland/FileUpload/blob/master/planingFiles/Wireframes/LaddaNed/Desktop.png" ><img width="100%" src="https://raw.githubusercontent.com/linusromland/FileUpload/master/planingFiles/Wireframes/LaddaNed/Mobil.png" /></a>
+<a href="https://github.com/linusromland/FileUpload/blob/master/planingFiles/Wireframes/LaddaNed/Desktop.png" ><img width="100%" src="https://raw.githubusercontent.com/linusromland/FileUpload/master/planingFiles/Wireframes/LaddaNed/Desktop.png" /></a>
 
 ### Mobil
 <a href="https://github.com/linusromland/FileUpload/blob/master/planingFiles/Wireframes/LaddaNed/Mobil.png" ><img height="500px" src="https://raw.githubusercontent.com/linusromland/FileUpload/master/planingFiles/Wireframes/LaddaNed/Mobil.png" /></a>
