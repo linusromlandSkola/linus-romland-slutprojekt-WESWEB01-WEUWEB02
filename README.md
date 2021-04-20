@@ -2,7 +2,9 @@
 *** ***Currently in development*** ***<br><br>
 Since Firefox Send is officaly dead...
 
-Se [`Planering`](https://github.com/linusromland/FileUpload/blob/master/planingFiles/PLANERING.md)
+##Planing
+
+See [`Planering`](https://github.com/linusromland/FileUpload/blob/master/planingFiles/PLANERING.md)
 
 ## What is it?
 This will be a file upload page that allows you to upload any file and availble for download (max 7 days after upload).
