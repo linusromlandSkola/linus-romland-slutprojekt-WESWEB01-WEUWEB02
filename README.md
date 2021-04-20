@@ -1,4 +1,4 @@
-# File Upload
+# FileUpload
 *** ***Currently in development*** ***<br><br>
 Since Firefox Send is officially dead...
 
