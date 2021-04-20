@@ -30,6 +30,7 @@ of the default.
 ### Template:
 ```
 PORT=3000
+SECRET=keyboardcat
 ```
 
 # License
