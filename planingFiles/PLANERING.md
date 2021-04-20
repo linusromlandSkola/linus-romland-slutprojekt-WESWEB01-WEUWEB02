@@ -3,7 +3,7 @@
 Detta kommer att bli mitt slutprojekt i kurserna Webbutveckling 2 (WEUWEB02) & Webbserverprogrammering 1 (WESWEB01)
 ## Vad ska det bli?
 
-"FileUpload" ska bli en sida där du ska kunna ladda upp filer och enkelt dela dem. För att få ladda upp en fil skall det krävas att man skapar ett konto samt verifierar kontot. Detta ger dig möjligheten att då ladda upp filer på upp till 250mb. (Denna max storleken på filer är ej huggen i sten). Sedan får du en länk som du kan dela så andra kan ladda ned dina filer. Vid uppladdning kommer du kunna välja hur länge filen ska sparas på server. Om den ska försvinna efter en vecka från uppladdning eller efter 3 nedladdningar. För att ladda ner kommer du ej behöva vara inloggad på sidan. 
+FileUpload ska bli en sida där du ska kunna ladda upp filer och enkelt dela dem. För att få ladda upp en fil skall det krävas att man skapar ett konto samt verifierar kontot. Detta ger dig möjligheten att då ladda upp filer på upp till 250mb. (Denna max storleken på filer är ej huggen i sten). Sedan får du en länk som du kan dela så andra kan ladda ned dina filer. Vid uppladdning kommer du kunna välja hur länge filen ska sparas på server. Om den ska försvinna efter en vecka från uppladdning eller efter 3 nedladdningar. För att ladda ner kommer du ej behöva vara inloggad på sidan. 
 
 ## Varför "FileUpload"?
 
@@ -32,7 +32,7 @@ Se [`WIREFRAMES.md`](https://github.com/linusromland/FileUpload/blob/master/plan
 
 ## Färger och Fonts
 
-Färgerna jag kommer använda kommer att vara ganska neutrala. Om jag har tid kommer jag även att implementera Dark Mode som default välja det som ditt Operativ System har. (Det ska finnas en knapp att överskrida).
+Färgerna jag kommer använda kommer att vara ganska neutrala. Om jag har tid kommer jag även att implementera Dark Mode som default välja det som ditt Operativsystem har. (Det ska finnas en knapp som överskrider).
 De fonts jag kommer välja är vanliga fonter som Arial, Roboto eller liknande. 
 
 
