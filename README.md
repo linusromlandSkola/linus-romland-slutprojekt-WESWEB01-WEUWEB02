@@ -2,7 +2,7 @@
 *** ***Currently in development*** ***<br><br>
 Since Firefox Send is officaly dead...
 
-##Planing
+## Planing
 
 See [`Planering`](https://github.com/linusromland/FileUpload/blob/master/planingFiles/PLANERING.md)
 
