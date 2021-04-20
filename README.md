@@ -1,6 +1,6 @@
 # File Upload
 *** ***Currently in development*** ***<br><br>
-Since Firefox Send is officaly dead...
+Since Firefox Send is officially dead...
 
 ## Planing
 
