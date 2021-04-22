@@ -12,6 +12,7 @@ const passport = require("passport");
 
 //Local Dependencies
 const database = require("./database.js");
+const login = require("./login.js");
 const initializePassport = require("./config/passport.js");
 const User = require("./models/user.js");
 const checkAuthenticated = require("./login.js");
@@ -55,7 +56,7 @@ initializePassport(
 );
 
 //Startpage
-app.get("/", (req, res) => {
+app.get("/", login.checkNotAuthenticated, (req, res) => {
 	res.render("pages/index");
 });
 

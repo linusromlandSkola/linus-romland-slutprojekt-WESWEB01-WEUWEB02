@@ -4,7 +4,7 @@ const ObjectID = require("mongodb").ObjectID;
 const email = require("./email.js")
 
 //checks if a user is authenticated with a valid session cookie
-exports.checkAuthenticated = (req, res, next) => {
+exports.checkAuthenticated = async (req, res, next) => {
 	if (req.isAuthenticated()) {
 		return next();
 	}
