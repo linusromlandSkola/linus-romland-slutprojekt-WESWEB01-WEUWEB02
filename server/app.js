@@ -73,6 +73,10 @@ app.post(
 //adds the loginroutes to /
 app.use("/", require("./routes/loginRoutes"));
 
+//adds the uploadroutes to /
+app.use("/", require("./routes/uploadRoutes"));
+
+
 //Starts the server
 app.listen(port, () =>
 	console.log(
