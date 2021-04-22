@@ -31,6 +31,10 @@ of the default.
 ```
 PORT=3000
 SECRET=keyboardcat
+EMAILADRESS=your@email.com
+PASSWORD=yourOnetimePasswordToYourGoogleAccouynt
+DOMAIN=localhost:3000
+MONGOURL=mongodb://localhost:27017/
 ```
 
 # License

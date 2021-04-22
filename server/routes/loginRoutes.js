@@ -10,10 +10,7 @@ module.exports = (function () {
 			//checks if the username exists in the database.
 			const userExist = await login.findInDBOne(User, req.body.name);
 			//checks if the email exists in the database.
-			const userEmailExist = await login.findEmailInDB(
-				User,
-				req.body.email
-			);
+			const userEmailExist = await login.findEmailInDB(User, req.body.email);
 
 			// if userExist and userEmailExist is null (aka not found in db), creates user
 			if (userExist == null && userEmailExist == null) {
@@ -40,9 +37,16 @@ module.exports = (function () {
 		}
 	});
 
-	router.get("/auth", login.checkAuthenticated, async (req, res) => {
-		let tmp = await req.user;
-		res.send("You're authenticated as " + tmp.name);
+	router.get("/auth", login.checkAuthenticated, async (req, res, next) => {
+		let user = await req.user;
+		if (user.verfied) {
+			res.send("You're authenticated as " + user.name);
+		}else{
+			res.render("pages/verifyEmail", {
+				user: user,
+			});
+		}
+		
 	});
 
 	router.get("/register", login.checkNotAuthenticated, (req, res) => {
@@ -51,6 +55,14 @@ module.exports = (function () {
 
 	router.get("/login", login.checkNotAuthenticated, (req, res) => {
 		res.render("pages/login");
+	});
+
+	router.get("/verifyAccount", async (req, res) => {
+		//updates bool on db to verified
+		login.verifyUser(User, req.query.user);
+		res.render("pages/verified", {
+			user: await login.findUserWithID(User, req.query.user),
+		});
 	});
 
 	router.get("/logout", login.checkAuthenticated, (req, res) => {
