@@ -11,11 +11,6 @@ exports.findEmailInDB = async (Model, toFind) => {
 	return await Model.findOne({ email: toFind });
 };
 
-//Fins all of Model in Database
-exports.findInDB = async (Model) => {
-	return await Model.find({});
-};
-
 //Finds all users with specified ID
 exports.findUserWithID = async (Model, toFind) => {
 	return await Model.findOne({ _id: toFind });
