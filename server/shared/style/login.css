@@ -1,6 +1,6 @@
 body{
-	background: #383a3d;
-	padding-top: 25vh;	
+	background: #4e4f50;
+	padding-top: 10vh;	
 }
 form{
 	background: #fff;
@@ -13,3 +13,4 @@ form{
 #errorText{
     color: red;
 }
+
