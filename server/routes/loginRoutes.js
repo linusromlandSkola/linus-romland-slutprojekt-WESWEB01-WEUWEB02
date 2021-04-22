@@ -8,19 +8,32 @@ module.exports = (function () {
 
 	router.post("/register", async (req, res) => {
 		try {
+			//checks if the username exists in the database.
 			const userExist = await dBModule.findInDBOne(User, req.body.name);
-			const userEmailExist = await dBModule.findEmailInDB(User, req.body.email);
+			//checks if the email exists in the database.
+			const userEmailExist = await dBModule.findEmailInDB(
+				User,
+				req.body.email
+			);
 
+			// if userExist and userEmailExist is null (aka not found in db), creates user
 			if (userExist == null && userEmailExist == null) {
 				dBModule.saveToDB(
-					login.createUser(req.body.name,req.body.email, req.body.password)
+					login.createUser(
+						req.body.name,
+						req.body.email,
+						req.body.password
+					)
 				);
 				res.sendStatus(201);
-			} else if(userExist) {
+				//send 409 to indicate to client username is taken
+			} else if (userExist) {
 				res.sendStatus(409);
-			}else if(userEmailExist) {
+				//send 410 to indicate to client email is taken
+			} else if (userEmailExist) {
 				res.sendStatus(410);
-			}else{
+				//unknown error
+			} else {
 				res.sendStatus(500);
 			}
 		} catch {
@@ -42,6 +55,7 @@ module.exports = (function () {
 	});
 
 	router.get("/logout", login.checkAuthenticated, (req, res) => {
+		//removes your session token and logs you out. 
 		req.logOut();
 		res.send("You are now logged out");
 	});
