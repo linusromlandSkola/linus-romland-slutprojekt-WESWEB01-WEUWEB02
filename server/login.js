@@ -1,5 +1,31 @@
+const User = require("./models/user.js");
 const mongoose = require("mongoose");
 const ObjectID = require("mongodb").ObjectID;
+
+//checks if a user is authenticated with a valid session cookie
+exports.checkAuthenticated = (req, res, next) => {
+	if (req.isAuthenticated()) {
+		return next();
+	}
+	res.redirect("/login");
+};
+
+//checks if a user is authenticated with a valid session cookie and then rejects them
+exports.checkNotAuthenticated = (req, res, next) => {
+	if (req.isAuthenticated()) {
+		return res.redirect("/auth");
+	}
+	next();
+};
+
+//function to create a usermodel from information
+exports.createUser = (nameIN, emailIN, passIN) => {
+	return new User({
+		name: nameIN,
+		email: emailIN,
+		password: passIN,
+	});
+};
 
 //Finds "toFind" in Database on the Model provided
 exports.findInDBOne = async (Model, toFind) => {

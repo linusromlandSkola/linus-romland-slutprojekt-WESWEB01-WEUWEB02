@@ -12,10 +12,9 @@ const passport = require("passport");
 
 //Local Dependencies
 const database = require("./database.js");
-const dBModule = require("./loginDB.js");
 const initializePassport = require("./config/passport.js");
 const User = require("./models/user.js");
-const checkAuthenticated = require("./loginFunction.js");
+const checkAuthenticated = require("./login.js");
 
 //Variable Init
 const port = process.env.PORT || 3000;
