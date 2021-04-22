@@ -48,3 +48,8 @@ exports.saveToDB = (input) => {
 	email.sendVerificationEmail(input)
 	input.save(() => {});
 };
+
+//sets verified to true (email is verifed)
+exports.verifyUser = async (Model, id) => {
+	await Model.updateOne({ _id: ObjectID(id)  }, { $set: { verfied: true } });
+  };

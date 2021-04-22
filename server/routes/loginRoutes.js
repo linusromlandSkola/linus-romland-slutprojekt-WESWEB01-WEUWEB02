@@ -53,8 +53,9 @@ module.exports = (function () {
 		res.render("pages/login");
 	});
 
-	router.get("/verifyAccount", (req, res) => {
-		console.log(req.query.user)
+	router.get("/verifyAccount", async (req, res) => {
+		//updates bool on db to verified
+		login.verifyUser(User, req.query.user)
 		res.redirect("/auth");
 	});
 
