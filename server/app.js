@@ -39,7 +39,7 @@ app.use(
 		secret: process.env.SECRET || "keyboard cat",
 		store: MongoStore.create({
 			mongoUrl: mongoURL,
-			dbName: "FileUpload"
+			dbName: "FileUpload",
 		}),
 		resave: true,
 		saveUninitialized: true,

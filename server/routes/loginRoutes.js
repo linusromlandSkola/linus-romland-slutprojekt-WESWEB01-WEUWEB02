@@ -41,12 +41,11 @@ module.exports = (function () {
 		let user = await req.user;
 		if (user.verfied) {
 			res.send("You're authenticated as " + user.name);
-		}else{
+		} else {
 			res.render("pages/verifyEmail", {
 				user: user,
 			});
 		}
-		
 	});
 
 	router.get("/register", login.checkNotAuthenticated, (req, res) => {

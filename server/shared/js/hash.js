@@ -1,13 +1,16 @@
 function registerUser(username, password, errorBox, infoBox, email) {
 	let request = new XMLHttpRequest();
 	let name = username;
+	//hash the password with salting
 	let pass = CryptoJS.MD5(password + name);
 	request.open("POST", "/register", true);
 	request.setRequestHeader(
 		"Content-type",
 		"application/x-www-form-urlencoded"
 	);
+	//sends request to to server
 	request.send(`name=${name}&email=${email}&password=${pass}`);
+	//on return recives status codes
 	request.onreadystatechange = function () {
 		infoBox.innerText = "";
 		if (request.status == 409) {
@@ -19,7 +22,7 @@ function registerUser(username, password, errorBox, infoBox, email) {
 		} else if (request.status == 201) {
 			infoBox.innerText = "Created user";
 			errorBox.innerText = "";
-			window.location = "/"
+			window.location = "/";
 			return;
 		} else {
 			errorBox.innerText = "Unknown error";
@@ -27,16 +30,17 @@ function registerUser(username, password, errorBox, infoBox, email) {
 	};
 }
 
-function loginUser(username, password, errorBox) {
+function loginUser(name, password, errorBox) {
 	let errorArea = errorBox;
 	let request = new XMLHttpRequest();
-	let name = username;
+	//hash the password with salting
 	let pass = CryptoJS.MD5(password + name);
 	request.open("POST", "/login", true);
 	request.setRequestHeader(
 		"Content-type",
 		"application/x-www-form-urlencoded"
 	);
+		//sends request to to server
 	request.send(`name=${name}&password=${pass}`);
 	request.onreadystatechange = function () {
 		// This is ugly and I want to change it
@@ -49,5 +53,5 @@ function loginUser(username, password, errorBox) {
 		}
 	};
 }
-
+// exports the functions
 export { registerUser, loginUser };

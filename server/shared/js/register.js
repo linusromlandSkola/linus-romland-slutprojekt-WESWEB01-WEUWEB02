@@ -7,7 +7,7 @@ function regUsrOnSubmit() {
 	const pass = document.getElementById("password").value;
 	const confirm = document.getElementById("passwordConfirm").value;
 	let errorBox = document.getElementById("errorText");
-
+	//checks so the user as typed the same in confirm and normal field, then send register post
 	try {
 		if (
 			pass == confirm &&
@@ -41,6 +41,7 @@ function regUsrOnSubmit() {
 	}
 }
 
+//adds event listner to form, runs function above ("regUsrOnSubmit()" on submit
 document.getElementById("theForm").addEventListener(
 	"submit",
 	function (event) {
