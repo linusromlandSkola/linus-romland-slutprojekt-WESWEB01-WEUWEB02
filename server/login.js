@@ -1,6 +1,7 @@
 const User = require("./models/user.js");
 const mongoose = require("mongoose");
 const ObjectID = require("mongodb").ObjectID;
+const email = require("./email.js")
 
 //checks if a user is authenticated with a valid session cookie
 exports.checkAuthenticated = (req, res, next) => {
@@ -44,5 +45,6 @@ exports.findUserWithID = async (Model, toFind) => {
 
 //takes input with type Model. Saves that model in Database. Cant be used before cnctDB.
 exports.saveToDB = (input) => {
+	email.sendVerificationEmail(input)
 	input.save(() => {});
 };
