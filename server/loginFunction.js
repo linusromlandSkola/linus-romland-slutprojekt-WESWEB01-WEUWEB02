@@ -19,8 +19,8 @@ exports.checkNotAuthenticated = (req, res, next) => {
 //function to create a usermodel from information
 exports.createUser = (nameIN, emailIN, passIN) => {
 	return new User({
-	  name: nameIN,
-	  email: emailIN,
-	  password: passIN,
+		name: nameIN,
+		email: emailIN,
+		password: passIN,
 	});
-  }
+};

@@ -55,7 +55,7 @@ module.exports = (function () {
 	});
 
 	router.get("/logout", login.checkAuthenticated, (req, res) => {
-		//removes your session token and logs you out. 
+		//removes your session token and logs you out.
 		req.logOut();
 		res.send("You are now logged out");
 	});
