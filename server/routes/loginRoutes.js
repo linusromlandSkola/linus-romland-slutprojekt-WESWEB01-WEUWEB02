@@ -2,23 +2,22 @@ module.exports = (function () {
 	//Dependencies import
 	const express = require("express");
 	const router = express.Router();
-	const dBModule = require("../loginDB.js");
-	const login = require("../loginFunction.js");
+	const login = require("../login.js");
 	const User = require("../models/user.js");
 
 	router.post("/register", async (req, res) => {
 		try {
 			//checks if the username exists in the database.
-			const userExist = await dBModule.findInDBOne(User, req.body.name);
+			const userExist = await login.findInDBOne(User, req.body.name);
 			//checks if the email exists in the database.
-			const userEmailExist = await dBModule.findEmailInDB(
+			const userEmailExist = await login.findEmailInDB(
 				User,
 				req.body.email
 			);
 
 			// if userExist and userEmailExist is null (aka not found in db), creates user
 			if (userExist == null && userEmailExist == null) {
-				dBModule.saveToDB(
+				login.saveToDB(
 					login.createUser(
 						req.body.name,
 						req.body.email,
