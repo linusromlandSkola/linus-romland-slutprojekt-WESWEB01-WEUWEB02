@@ -2,7 +2,7 @@ module.exports = (function () {
 	//Dependencies import
 	const express = require("express");
 	const router = express.Router();
-	const dBModule = require("../dbModule.js");
+	const dBModule = require("../loginDB.js");
 	const login = require("../loginFunction.js");
 	const User = require("../models/user.js");
 

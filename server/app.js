@@ -11,7 +11,8 @@ const sessionstore = require("sessionstore");
 const passport = require("passport");
 
 //Local Dependencies
-const dBModule = require("./dbModule.js");
+const database = require("./database.js");
+const dBModule = require("./loginDB.js");
 const initializePassport = require("./config/passport.js");
 const User = require("./models/user.js");
 const checkAuthenticated = require("./loginFunction.js");
@@ -21,7 +22,7 @@ const port = process.env.PORT || 3000;
 let store;
 
 //Connect to Mongo
-dBModule.connect("FileUpload", "mongodb://localhost:27017/");
+database.connect("FileUpload", "mongodb://localhost:27017/");
 
 //Sets the view engine to EJS
 app.set("view engine", "ejs");

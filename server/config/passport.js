@@ -1,5 +1,5 @@
 const LocalStrategy = require("passport-local").Strategy,
-	dbModule = require("../dbModule.js"),
+	dbModule = require("../loginDB.js"),
 	User = require("../models/user.js");
 
 function initialize(passport) {
