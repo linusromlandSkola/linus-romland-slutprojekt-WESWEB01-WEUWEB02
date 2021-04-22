@@ -53,6 +53,11 @@ module.exports = (function () {
 		res.render("pages/login");
 	});
 
+	router.get("/verifyAccount", (req, res) => {
+		console.log(req.query.user)
+		res.redirect("/auth");
+	});
+
 	router.get("/logout", login.checkAuthenticated, (req, res) => {
 		//removes your session token and logs you out.
 		req.logOut();
