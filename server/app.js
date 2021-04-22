@@ -9,6 +9,7 @@ const session = require("express-session");
 const flash = require("express-flash");
 const sessionstore = require("sessionstore");
 const passport = require("passport");
+const MongoStore = require("connect-mongo");
 
 //Local Dependencies
 const database = require("./database.js");
@@ -19,10 +20,11 @@ const checkAuthenticated = require("./login.js");
 
 //Variable Init
 const port = process.env.PORT || 3000;
+const mongoURL = process.env.MONGOURL || "mongodb://localhost:27017/";
 let store;
 
 //Connect to Mongo
-database.connect("FileUpload", "mongodb://localhost:27017/");
+database.connect("FileUpload", mongoURL);
 
 //Sets the view engine to EJS
 app.set("view engine", "ejs");
@@ -35,15 +37,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
 	session({
 		secret: process.env.SECRET || "keyboard cat",
-		store: store,
-		resave: false,
+		store: MongoStore.create({
+			mongoUrl: mongoURL,
+			dbName: "FileUpload"
+		}),
+		resave: true,
 		saveUninitialized: true,
-		cookie: {
-			maxAge: 24 * 60 * 60 * 1000,
-			httpOnly: true,
-			secure: false,
-			sameSite: "strict",
-		},
 	})
 );
 app.use(passport.initialize(undefined));
@@ -75,4 +74,8 @@ app.post(
 app.use("/", require("./routes/loginRoutes"));
 
 //Starts the server
-app.listen(port, () => console.log(`FileUpload listening on port ${port}!`));
+app.listen(port, () =>
+	console.log(
+		`FileUpload listening on port ${port}!\nAccess the site on http://localhost:${port}`
+	)
+);

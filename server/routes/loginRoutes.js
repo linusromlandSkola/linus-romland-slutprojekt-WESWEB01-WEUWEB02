@@ -39,12 +39,14 @@ module.exports = (function () {
 
 	router.get("/auth", login.checkAuthenticated, async (req, res, next) => {
 		let user = await req.user;
-		if (req.user.verfied) {
+		if (user.verfied) {
 			res.send("You're authenticated as " + user.name);
+		}else{
+			res.render("pages/verifyEmail", {
+				user: user,
+			});
 		}
-		res.render("pages/verifyEmail", {
-			user: user,
-		});
+		
 	});
 
 	router.get("/register", login.checkNotAuthenticated, (req, res) => {

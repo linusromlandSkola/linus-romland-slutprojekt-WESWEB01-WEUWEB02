@@ -19,6 +19,7 @@ function registerUser(username, password, errorBox, infoBox, email) {
 		} else if (request.status == 201) {
 			infoBox.innerText = "Created user";
 			errorBox.innerText = "";
+			window.location = "/"
 			return;
 		} else {
 			errorBox.innerText = "Unknown error";
