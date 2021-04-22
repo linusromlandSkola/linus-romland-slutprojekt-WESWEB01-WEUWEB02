@@ -30,6 +30,7 @@ app.use(flash());
 app.use(express.static("client"));
 app.use(express.urlencoded({ extended: true }));
 
+//init of passport
 app.use(
 	session({
 		secret: process.env.SECRET || "keyboard cat",
