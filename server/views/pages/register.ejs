@@ -3,48 +3,99 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Register</title>
+		<title>Register - FileUpload</title>
 		<!--CDN IMPORT OF Crypto-JS used for the hashing and salting of password-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+
+		<!--CDN IMPORT OF Bootstrap -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style/login.css" />
 
 		<script src="/js/hash.js" type="module" defer></script>
 		<script src="/js/register.js" type="module" defer></script>
 	</head>
 	<body>
-		<form id="theForm">
-			<input
-				type="text"
-				placeholder="username"
-				name="username"
-				id="username"
-			/>
-			<br />
-			<input type="email" placeholder="Email" name="Email" id="email" />
-			<br />
-			<input
-				type="email"
-				placeholder="Confirm Email"
-				name="ConfirmEmail"
-				id="emailConfirm"
-			/>
-			<br />
-			<input
-				type="password"
-				placeholder="password"
-				name="password"
-				id="password"
-			/>
-			<br />
-			<input
-				type="password"
-				placeholder="Confirm Password"
-				name="ConfirmPassword"
-				id="passwordConfirm"
-			/>
-			<p id="errorText"></p>
-			<p id="infoText"></p>
-			<input type="submit" value="Register" />
-		</form>
+		<section class="container-fluid">
+			<section class="row justify-content-center">
+				<section class="col-12 col-sm-6 col-md-4">
+					<form id="theForm" class="form-container">
+						<div class="form-group">
+							<h4 class="text-center font-weight-bold">Register</h4>
+							<label for="username">Username</label>
+							<input
+								class="form-control"
+								type="text"
+								placeholder="Username"
+								class="fadeIn second"
+								id="username"
+								name="username"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input
+								class="form-control"
+								class="fadeIn third"
+								type="email"
+								placeholder="Email"
+								name="Email"
+								id="email"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="emailConfirm">Confirm Email</label>
+							<input
+								class="form-control"
+								class="fadeIn third"
+								type="email"
+								placeholder="Confirm Email"
+								name="ConfirmEmail"
+								id="emailConfirm"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input
+								class="form-control"
+								type="password"
+								placeholder="Password"
+								class="fadeIn third"
+								id="password"
+								name="password"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="passwordConfirm">Confirm Password</label>
+							<input
+								class="form-control"
+								class="fadeIn third"
+								type="password"
+								placeholder="Confirm Password"
+								name="ConfirmPassword"
+								id="passwordConfirm"
+							/>
+						</div>
+						<p id="errorText"></p>
+						<p id="infoText"></p>
+						<button type="submit" class="btn btn-primary btn-block">
+							Register
+						</button>
+						<div class="form-footer">
+							<p>
+								Already have an account? <a href="/login">Login</a>
+							</p>
+						</div>
+					</form>
+				</section>
+			</section>
+		</section>
+
+	
 	</body>
 </html>

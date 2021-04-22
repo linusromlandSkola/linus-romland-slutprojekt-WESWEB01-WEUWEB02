@@ -3,32 +3,60 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Login</title>
+		<title>Login - FileUpload</title>
 		<!--CDN IMPORT OF Crypto-JS used for the hashing and salting of password-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+
+		<!--CDN IMPORT OF Bootstrap -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style/login.css" />
 
 		<script src="/js/hash.js" type="module"></script>
 		<script src="/js/login.js" type="module" defer></script>
 	</head>
 	<body>
-		<form id="theForm">
-			<input
-				type="text"
-				placeholder="Username"
-				class="fadeIn second"
-				id="username"
-				name="username"
-			/>
-			<input
-				type="password"
-				placeholder="Password"
-				class="fadeIn third"
-				id="password"
-				name="password"
-			/>
-			<p id="errorText"></p>
-			<input type="submit" class="fadeIn fourth" value="Log In" />
-		</form>
+		<section class="container-fluid">
+			<section class="row justify-content-center">
+				<section class="col-12 col-sm-6 col-md-4">
+					<form id="theForm" class="form-container">
+						<div class="form-group">
+							<h4 class="text-center font-weight-bold">Login</h4>
+							<label for="username">Username</label>
+							<input
+								class="form-control"
+								type="text"
+								placeholder="Username"
+								class="fadeIn second"
+								id="username"
+								name="username"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input
+								class="form-control"
+								type="password"
+								placeholder="Password"
+								class="fadeIn third"
+								id="password"
+								name="password"
+							/>
+						</div>
+						<button type="submit" class="btn btn-primary btn-block">
+							Login
+						</button>
+						<div class="form-footer">
+							<p>Don't have an account? <a href="/register">Register</a></p>
+						</div>
+					</form>
+				</section>
+			</section>
+		</section>
 	</body>
 </html>
