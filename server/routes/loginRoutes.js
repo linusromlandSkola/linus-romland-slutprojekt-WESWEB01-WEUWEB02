@@ -3,7 +3,7 @@ module.exports = (function () {
 	const express = require("express");
 	const router = express.Router();
 	const login = require("../login.js");
-	const User = require("../models/user.js");
+	const User = require("../models/User.js");
 
 	router.post("/register", async (req, res) => {
 		try {

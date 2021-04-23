@@ -16,7 +16,7 @@ const fileUpload = require("express-fileupload");
 const database = require("./database.js");
 const login = require("./login.js");
 const initializePassport = require("./config/passport.js");
-const User = require("./models/user.js");
+const User = require("./models/User.js");
 const checkAuthenticated = require("./login.js");
 
 //Variable Init
