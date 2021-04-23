@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload File - FileUpload</title>
-    <script src="/js/upload.js" defer></script>
-    <meta id="maxFileSize" maxFileSize=<%- maxFileSize %>>
-</head>
-<body>
-    <form id="uploadForm" enctype="multipart/form-data">
-        <input id="fileField" type="file" size="52428800" name="file">
-        <input type="submit">
-    </form>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Upload File - FileUpload</title>
+		<script src="/js/upload.js" defer></script>
+		<meta id="maxFileSize" maxFileSize="<%- maxFileSize %>" />
+		<link rel="stylesheet" href="style/upload.css" />
+		<!--CDN IMPORT OF Bootstrap -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<div id="drop">Click or drop here to upload</div>
+		<input id="fileField" type="file" size="52428800" name="file" hidden />
+		<section class="container-fluid">
+			<section class="row justify-content-center">
+				<section class="col-12 col-sm-6 col-md-3">
+					<div class="form-container" id="fakeForm" hidden>
+						<div class="form-group">
+							<button id="changeFile">Change File</button>
+							<p id="fileName">No file selected...</p>
+						</div>
+						<div class="form-group">
+							<label for="Title">Title:</label>
+							<input type="text" id="Title" />
+						</div>
+						<div class="form-group">
+							<label for="Description">Description:</label>
+							<input type="text" id="Description" />
+						</div>
+						<div class="form-group">
+							<label for="maxDownlod">Max number of download:</label>
+							<input type="number" id="maxDownload" />
+						</div>
+						<button class="btn btn-primary btn-block" type="submit">
+							Submit
+						</button>
+					</div>
+				</section>
+			</section>
+		</section>
+	</body>
 </html>

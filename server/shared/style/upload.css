@@ -1,0 +1,53 @@
+body {
+	background: #4e4f50;
+	padding-top: 10vh;
+}
+.form-container {
+	border-radius: 10px;
+	padding: 30px;
+}
+#drop {
+	width: 60%;
+	height: 50vh;
+	border: 2px solid black;
+	border-radius: 5px;
+	box-shadow: rgb(59, 59, 59) 2px 2px 5px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	display: grid;
+	align-items: center;
+	user-select: none;
+	cursor: pointer;
+	transition: background-color 0.15s, border 0.05s;
+}
+
+#drop.dragover {
+	border: 4px solid #000;
+	background-color: rgb(202, 202, 202);
+}
+input {
+	max-width: 40%;
+	float: right;
+}
+
+#fileName {
+	/*display: inline-block;*/
+    float: left;
+    max-width: 55%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#changeFile {
+    float: left;
+	cursor: pointer;
+}
+
+
+#fileName, #changeFile{
+    margin: 1%
+}
