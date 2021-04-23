@@ -1,3 +1,4 @@
+//EventListner that prevents default on form and runs function "uploadFile()"
 document
 	.getElementById("uploadForm")
 	.addEventListener("submit", function (event) {
@@ -5,8 +6,12 @@ document
 		uploadFile();
 	});
 
+//Functions that send POST to server with file and calulates % and speed of upload
 function uploadFile() {
-	const file = document.getElementById("fileField").files[0];
+	//The file to be uploaded
+    const file = document.getElementById("fileField").files[0];
+
+    //checks if file is to large to upload
 	if (file.size > document.getElementById("maxFileSize").attributes[1].value) {
         console.log("you dum dum")
 	} else {
@@ -16,14 +21,17 @@ function uploadFile() {
 		let t0 = 0;
 		let d0 = 0;
 
+        //adds to file to formData
 		formData.append("file", file);
 
+        //runs when return from server
 		xhr.onreadystatechange = function () {
 			if (this.status == 200) {
 				console.log("cool done i thknk");
 			}
 		};
 
+        //runs during upload and calulates % & speed
 		xhr.upload.onprogress = function (e) {
 			MBps =
 				e.loaded > 0
@@ -44,6 +52,7 @@ function uploadFile() {
 			d0 = e.loaded;
 		};
 
+        //opens and send post request to server
 		xhr.open("POST", "/uploadFile");
 		xhr.send(formData);
 	}
