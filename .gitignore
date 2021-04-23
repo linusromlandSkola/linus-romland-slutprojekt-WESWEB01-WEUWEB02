@@ -1,6 +1,9 @@
 # My own ingnores
 .DS_Store
-dist/*
+tmp/
+!tmp/.gitkeep 
+uploaded/
+!uploaded/.gitkeep 
 
 # Logs
 logs

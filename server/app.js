@@ -10,6 +10,7 @@ const flash = require("express-flash");
 const sessionstore = require("sessionstore");
 const passport = require("passport");
 const MongoStore = require("connect-mongo");
+const fileUpload = require("express-fileupload");
 
 //Local Dependencies
 const database = require("./database.js");
@@ -53,6 +54,15 @@ initializePassport(
 	(name) => User.find((user) => user.name === name),
 	(id) => User.find((user) => user.id === id)
 );
+
+//init of express-fileupload
+app.use(fileUpload({
+	limits: { fileSize: 50 * 1024 * 1024 }, //limit of 50mb i think
+	useTempFiles : true, //stores files while uploading in ./tmp instead of memory
+    tempFileDir : './tmp/',
+	uploadTimeout: 0, //disable timeout while testing
+	debug: true //debug logs
+  }));
 
 //Startpage
 app.get("/", login.checkNotAuthenticated, (req, res) => {
