@@ -26,6 +26,7 @@
     "express-fileupload": "^1.2.1",
     "express-flash": "0.0.2",
     "express-session": "^1.17.1",
+    "filesize": "^6.3.0",
     "forever": "^3.0.4",
     "lodash": ">=4.17.19",
     "mongoose": "^5.12.5",

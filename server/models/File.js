@@ -23,6 +23,10 @@ const FileSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	fileSize: {
+		type: Number,
+		required: true,
+	},
 	maxDownloads: {
 		type: Number,
 		required: true,
