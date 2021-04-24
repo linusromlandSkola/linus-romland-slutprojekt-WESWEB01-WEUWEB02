@@ -3,7 +3,7 @@ module.exports = (function () {
 	const express = require("express");
 	const router = express.Router();
 	const login = require("../login.js");
-	const User = require("../models/user.js");
+	const User = require("../models/User.js");
 
 	router.post("/register", async (req, res) => {
 		try {
@@ -40,7 +40,7 @@ module.exports = (function () {
 	router.get("/auth", login.checkAuthenticated, async (req, res, next) => {
 		let user = await req.user;
 		if (user.verfied) {
-			res.send("You're authenticated as " + user.name);
+			res.redirect("/upload")
 		} else {
 			res.render("pages/verifyEmail", {
 				user: user,

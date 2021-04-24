@@ -1,6 +1,6 @@
 const LocalStrategy = require("passport-local").Strategy,
 	dbModule = require("../login.js"),
-	User = require("../models/user.js");
+	User = require("../models/User.js");
 
 function initialize(passport) {
 	const authenticateUser = async (name, password, done) => {
