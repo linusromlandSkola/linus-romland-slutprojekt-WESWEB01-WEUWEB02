@@ -40,17 +40,21 @@
 						</div>
 						<div class="form-group">
 							<label for="Title">Title:</label>
-							<input type="text" id="Title" required/>
+							<input type="text" id="Title" required />
 						</div>
 						<div class="form-group">
 							<label for="Description">Description:</label>
-							<input type="text" id="Description" required/>
+							<input type="text" id="Description" required />
 						</div>
 						<div class="form-group">
 							<label for="maxDownlod">Max number of download:</label>
-							<input type="number" id="maxDownload" required/>
+							<input type="number" id="maxDownload" required />
 						</div>
-						<button id="uploadBtn" class="btn btn-primary btn-block" type="submit">
+						<button
+							id="uploadBtn"
+							class="btn btn-primary btn-block"
+							type="submit"
+						>
 							Upload
 						</button>
 					</div>
@@ -58,24 +62,25 @@
 			</section>
 		</section>
 		<div id="message" hidden class="card">
-			<div class="card-header">
-			  Upload
-			</div>
+			<div class="card-header">Upload</div>
 			<div class="card-body">
-			  <h5 id="cardtitle" class="card-title">Your file was succesfully uploaded!</h5>
-			  <p class="card-text">You can download the file from the following link:.</p>
-			  <a href="#" class="btn btn-primary">Download</a>
+				<h5 id="cardtitle" class="card-title">
+					Your file was succesfully uploaded!
+				</h5>
+				<p class="card-text">
+					You can download the file from the following link:.
+				</p>
+				<a href="#" id="downloadLink" class="btn btn-primary">Download</a>
 			</div>
-		  </div>
-		  <div id="error" hidden class="card">
-			<div class="card-header">
-			  Upload
-			</div>
+		</div>
+		<div id="error" hidden class="card">
+			<div class="card-header">Upload</div>
 			<div class="card-body">
-			  <h5 id="errortitle" class="card-title">Your file was not uploaded!</h5>
-			  <p class="card-text">Unkown error occured!</p>
+				<h5 id="errortitle" class="card-title">
+					Your file was not uploaded!
+				</h5>
+				<p class="card-text">Unkown error occured!</p>
 			</div>
-		  </div>
-		  
+		</div>
 	</body>
 </html>

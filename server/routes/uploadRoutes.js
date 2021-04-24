@@ -30,7 +30,7 @@ module.exports = (function () {
 			);
 			database.saveToDB(theFile);
 			await req.files.file.mv("./uploaded/" + file.md5);
-			res.sendStatus(201);
+			res.status(201).send(file.md5);
 		} catch (error) {
 			console.log(error)
 			res.sendStatus(500);

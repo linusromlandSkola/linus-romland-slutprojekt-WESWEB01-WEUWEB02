@@ -21,11 +21,13 @@ function uploadFile() {
 			document.getElementById("maxDownload").value
 		);
 
+		
+
 		//runs when return from server
 		xhr.onreadystatechange = function () {
 			if (this.status == 201) {
 				console.log("File uploaded");
-				successView();
+				successView(this.responseText);
 			} else if (this.status == 500) {
 				errorView()
 				console.log("unkown error");
@@ -59,10 +61,11 @@ function uploadFile() {
 	}
 }
 
-function successView() {
+function successView(md5) {
 	document.getElementById("upload").style = "display:none;";
 	document.getElementById("cardtitle").innerText = "Your file \"" + theFile.name + "\" was succesfully uploaded!"
 	document.getElementById("message").hidden = false;
+	document.getElementById("downloadLink").href = "/download?file=" + md5
 }
 
 function errorView() {
