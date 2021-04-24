@@ -27,6 +27,7 @@ function uploadFile() {
 				console.log("File uploaded");
 				successView();
 			} else if (this.status == 500) {
+				errorView()
 				console.log("unkown error");
 			}
 		};
@@ -62,6 +63,12 @@ function successView() {
 	document.getElementById("upload").style = "display:none;";
 	document.getElementById("cardtitle").innerText = "Your file \"" + theFile.name + "\" was succesfully uploaded!"
 	document.getElementById("message").hidden = false;
+}
+
+function errorView() {
+	document.getElementById("upload").style = "display:none;";
+	document.getElementById("errortitle").innerText = "Your file \"" + theFile.name + "\" was not uploaded!"
+	document.getElementById("error").hidden = false;
 }
 
 let theFile;
