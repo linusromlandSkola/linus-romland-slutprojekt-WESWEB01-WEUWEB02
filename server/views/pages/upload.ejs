@@ -18,7 +18,7 @@
 	</head>
 	<body>
 		<div id="drop">Click or drop here to upload</div>
-		<section class="container-fluid">
+		<section id="upload" class="container-fluid">
 			<section class="row justify-content-center">
 				<section class="col-12 col-sm-6 col-md-3">
 					<div class="form-container" id="fakeForm" hidden>
@@ -57,5 +57,15 @@
 				</section>
 			</section>
 		</section>
+		<div id="message" hidden class="card">
+			<div class="card-header">
+			  Upload
+			</div>
+			<div class="card-body">
+			  <h5 id="cardtitle" class="card-title">Your file was succesfully uploaded!</h5>
+			  <p class="card-text">You can download the file from the following link:.</p>
+			  <a href="#" class="btn btn-primary">Download</a>
+			</div>
+		  </div>
 	</body>
 </html>

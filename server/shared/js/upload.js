@@ -1,8 +1,9 @@
 //Functions that send POST to server with file and calulates % and speed of upload
 function uploadFile() {
-
 	//checks if file is to large to upload
-	if (theFile.size > document.getElementById("maxFileSize").attributes[1].value) {
+	if (
+		theFile.size > document.getElementById("maxFileSize").attributes[1].value
+	) {
 		console.log("you dum dum");
 	} else {
 		let formData = new FormData();
@@ -15,12 +16,18 @@ function uploadFile() {
 		formData.append("file", theFile);
 		formData.append("title", document.getElementById("Title").value);
 		formData.append("desc", document.getElementById("Description").value);
-		formData.append("maxDownloads", document.getElementById("maxDownload").value);
+		formData.append(
+			"maxDownloads",
+			document.getElementById("maxDownload").value
+		);
 
 		//runs when return from server
 		xhr.onreadystatechange = function () {
-			if (this.status == 200) {
-				console.log("cool done i thknk");
+			if (this.status == 201) {
+				console.log("File uploaded");
+				successView();
+			} else if (this.status == 500) {
+				console.log("unkown error");
 			}
 		};
 
@@ -51,6 +58,12 @@ function uploadFile() {
 	}
 }
 
+function successView() {
+	document.getElementById("upload").style = "display:none;";
+	document.getElementById("cardtitle").innerText = "Your file \"" + theFile.name + "\" was succesfully uploaded!"
+	document.getElementById("message").hidden = false;
+}
+
 let theFile;
 
 const dropzone = document.getElementById("drop");
@@ -79,8 +92,8 @@ dropzone.ondrop = (e) => {
 };
 
 uploadBtn.onclick = () => {
-	uploadFile()
-}
+	uploadFile();
+};
 
 fileField.onchange = () => {
 	console.log(fileField.files[0]);
