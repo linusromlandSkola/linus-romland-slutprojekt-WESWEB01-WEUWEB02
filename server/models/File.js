@@ -7,12 +7,12 @@ const FileSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-    tmpName: {
+	tmpName: {
 		type: String,
 		required: true,
 	},
 	user: {
-		type: ObjectID,
+		type: String,
 		required: true,
 	},
 	title: {
@@ -23,13 +23,13 @@ const FileSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-    maxDownloads: {
+	maxDownloads: {
 		type: Number,
 		required: true,
 	},
-    currentDownloads: {
+	currentDownloads: {
 		type: Number,
-		default: 0,
+		required: true,
 	},
 	date: {
 		type: Date,

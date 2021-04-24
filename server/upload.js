@@ -1,13 +1,21 @@
 const File = require("./models/File.js");
 
 //function to create a filemodel from information
-exports.createFile = (fileNameIN, tmpName, userIN, titleIN, descIN, maxDownloadsIN) => {
+exports.createFile = (
+	fileNameIN,
+	tmpNameIN,
+	userIN,
+	titleIN,
+	descIN,
+	maxDownloadsIN
+) => {
 	return new File({
 		fileName: fileNameIN,
-        tmpName: tmpNameIN,
+		tmpName: tmpNameIN,
 		user: userIN,
 		title: titleIN,
-        desc: descIN,
-        maxDownloads: maxDownloadsIN
+		desc: descIN,
+		maxDownloads: maxDownloadsIN,
+		currentDownloads: 0,
 	});
 };
