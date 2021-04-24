@@ -87,6 +87,9 @@ app.use("/", require("./routes/loginRoutes"));
 //adds the uploadroutes to /
 app.use("/", require("./routes/uploadRoutes"));
 
+//adds the downloadroutes to /
+app.use("/", require("./routes/downloadRoutes"));
+
 
 //Starts the server
 app.listen(port, () =>
