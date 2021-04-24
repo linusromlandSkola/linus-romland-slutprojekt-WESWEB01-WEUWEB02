@@ -17,21 +17,22 @@ module.exports = (function () {
 	router.post("/uploadFile", login.checkAuthenticated, async (req, res) => {
 		try {
 			let file = await req.files.file;
-			let fileMD5 = await file.md5;
 			let user = await req.user;
-			user = user.name;
+
 			let theFile = upload.createFile(
 				file.name,
-				fileMD5,
-				user,
+				file.md5,
+				user.name,
 				req.body.title,
 				req.body.desc,
-				req.body.maxDownloads
+				req.body.maxDownloads,
+				file.size
 			);
 			database.saveToDB(theFile);
-			await req.files.file.mv("./uploaded/" + fileMD5);
+			await req.files.file.mv("./uploaded/" + file.md5);
 			res.sendStatus(201);
 		} catch (error) {
+			console.log(error)
 			res.sendStatus(500);
 		}
 	});

@@ -7,7 +7,8 @@ exports.createFile = (
 	userIN,
 	titleIN,
 	descIN,
-	maxDownloadsIN
+	maxDownloadsIN,
+	fileSizeIN
 ) => {
 	return new File({
 		fileName: fileNameIN,
@@ -16,6 +17,7 @@ exports.createFile = (
 		title: titleIN,
 		desc: descIN,
 		maxDownloads: maxDownloadsIN,
+		fileSize: fileSizeIN,
 		currentDownloads: 0,
 	});
 };
