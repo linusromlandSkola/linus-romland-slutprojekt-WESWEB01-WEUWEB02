@@ -1,10 +1,8 @@
 //Functions that send POST to server with file and calulates % and speed of upload
 function uploadFile() {
-	//The file to be uploaded
-	const file = document.getElementById("fileField").files[0];
 
 	//checks if file is to large to upload
-	if (file.size > document.getElementById("maxFileSize").attributes[1].value) {
+	if (theFile.size > document.getElementById("maxFileSize").attributes[1].value) {
 		console.log("you dum dum");
 	} else {
 		let formData = new FormData();
@@ -14,7 +12,10 @@ function uploadFile() {
 		let d0 = 0;
 
 		//adds to file to formData
-		formData.append("file", file);
+		formData.append("file", theFile);
+		formData.append("title", document.getElementById("Title").value);
+		formData.append("desc", document.getElementById("Description").value);
+		formData.append("maxDownloads", document.getElementById("maxDownload").value);
 
 		//runs when return from server
 		xhr.onreadystatechange = function () {
@@ -54,6 +55,8 @@ let theFile;
 
 const dropzone = document.getElementById("drop");
 const fileField = document.getElementById("fileField");
+const uploadBtn = document.getElementById("uploadBtn");
+
 dropzone.ondragover = () => {
 	dropzone.className = "dragover";
 	return false;
@@ -68,16 +71,16 @@ dropzone.onclick = () => {
 	document.getElementById("fileField").click();
 };
 
-changeFile.onclick = () => {
-	document.getElementById("fileField").click();
-};
-
-dropzone.ondrop = function (e) {
+dropzone.ondrop = (e) => {
 	e.preventDefault();
 	this.className = "";
 	theFile = e.dataTransfer.files[0];
 	changeContent();
 };
+
+uploadBtn.onclick = () => {
+	uploadFile()
+}
 
 fileField.onchange = () => {
 	console.log(fileField.files[0]);

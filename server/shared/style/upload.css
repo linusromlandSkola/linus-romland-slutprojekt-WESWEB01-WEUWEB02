@@ -33,21 +33,18 @@ input {
 	float: right;
 }
 
-#fileName {
-	/*display: inline-block;*/
-    float: left;
-    max-width: 55%;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
 #changeFile {
-    float: left;
+	float: left;
 	cursor: pointer;
 }
 
+#fileName,
+#changeFile {
+	margin: 1%;
+}
 
-#fileName, #changeFile{
-    margin: 1%
+#fileField {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }

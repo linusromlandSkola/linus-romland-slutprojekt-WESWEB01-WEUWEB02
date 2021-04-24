@@ -18,14 +18,25 @@
 	</head>
 	<body>
 		<div id="drop">Click or drop here to upload</div>
-		<input id="fileField" type="file" size="52428800" name="file" hidden />
 		<section class="container-fluid">
 			<section class="row justify-content-center">
 				<section class="col-12 col-sm-6 col-md-3">
 					<div class="form-container" id="fakeForm" hidden>
 						<div class="form-group">
-							<button id="changeFile">Change File</button>
-							<p id="fileName">No file selected...</p>
+							<div class="input-group mb-3">
+								<div class="custom-file">
+									<input
+										class="custom-file-input"
+										id="fileField"
+										type="file"
+										size="52428800"
+										name="file"
+									/>
+									<label class="custom-file-label" id="fileName"
+										>Choose file</label
+									>
+								</div>
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="Title">Title:</label>
@@ -39,8 +50,8 @@
 							<label for="maxDownlod">Max number of download:</label>
 							<input type="number" id="maxDownload" />
 						</div>
-						<button class="btn btn-primary btn-block" type="submit">
-							Submit
+						<button id="uploadBtn" class="btn btn-primary btn-block" type="submit">
+							Upload
 						</button>
 					</div>
 				</section>

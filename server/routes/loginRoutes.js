@@ -40,7 +40,7 @@ module.exports = (function () {
 	router.get("/auth", login.checkAuthenticated, async (req, res, next) => {
 		let user = await req.user;
 		if (user.verfied) {
-			res.send("You're authenticated as " + user.name);
+			res.redirect("/upload")
 		} else {
 			res.render("pages/verifyEmail", {
 				user: user,
