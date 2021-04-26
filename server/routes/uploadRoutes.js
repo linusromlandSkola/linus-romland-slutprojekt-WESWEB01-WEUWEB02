@@ -39,7 +39,8 @@ module.exports = (function () {
 					fileFromUser.name
 				}" Filesize: ${filesize(fileFromUser.size)}`
 			);
-			res.status(201).send(fileModel._id);
+			let id = fileModel._id + "" //this is ulgy but otherwise the fkn mongoid adds ""
+			res.status(201).send(id);
 		} catch (error) {
 			console.log(error);
 			res.sendStatus(500);
