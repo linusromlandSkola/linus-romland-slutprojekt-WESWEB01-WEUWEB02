@@ -4,7 +4,7 @@ function uploadFile() {
 	if (
 		theFile.size > document.getElementById("maxFileSize").attributes[1].value
 	) {
-		console.log("you dum dum");
+		window.alert("That file is to large! Max 50MB!")
 	} else {
 		let formData = new FormData();
 		let xhr = new XMLHttpRequest();
@@ -24,11 +24,9 @@ function uploadFile() {
 		//runs when return from server
 		xhr.onreadystatechange = function () {
 			if (this.status == 201) {
-				console.log("File uploaded");
 				successView(this.response);
 			} else if (this.status == 500) {
 				errorView();
-				console.log("unkown error");
 			}
 		};
 
@@ -107,7 +105,6 @@ uploadBtn.onclick = () => {
 };
 
 fileField.onchange = () => {
-	console.log(fileField.files[0]);
 	if (fileField.files[0]) {
 		theFile = fileField.files[0];
 		changeContent();
