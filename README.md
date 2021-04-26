@@ -17,7 +17,7 @@ Live Demo will be available once the project is actually somewhat usefull.
 
 ## Run it yourself:
 
-Check the [wiki page](https://github.com/linusromland/FileUpload/wiki/Running-the-Code)
+Check the [`wiki page`](https://github.com/linusromland/FileUpload/wiki/Running-the-Code)
 
 ### Template:
 
