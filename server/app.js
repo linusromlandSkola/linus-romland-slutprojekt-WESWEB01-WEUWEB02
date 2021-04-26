@@ -22,7 +22,7 @@ const checkAuthenticated = require("./login.js");
 //Variable Init
 const port = process.env.PORT || 3000;
 const mongoURL = process.env.MONGOURL || "mongodb://localhost:27017/";
-const fileSizeLimitMB = process.env.FILESIZELIMITMB  * 1024 * 1024 || 52428800;
+const fileSizeLimitMB = process.env.FILESIZELIMITMB * 1024 * 1024 || 52428800;
 
 //Connect to Mongo
 database.connect("FileUpload", mongoURL);
@@ -56,14 +56,16 @@ initializePassport(
 );
 
 //init of express-fileupload
-app.use(fileUpload({
-	limits: { fileSize: fileSizeLimitMB}, //limit of 50mb i think
-	abortOnLimit: true, //send 413 when file to large
-	useTempFiles : true, //stores files while uploading in ./tmp instead of memory
-    tempFileDir : './tmp/',
-	uploadTimeout: 0, //disable timeout while testing
-	debug: false //debug logs
-  }));
+app.use(
+	fileUpload({
+		limits: { fileSize: fileSizeLimitMB }, //limit of 50mb i think
+		abortOnLimit: true, //send 413 when file to large
+		useTempFiles: true, //stores files while uploading in ./tmp instead of memory
+		tempFileDir: "./tmp/",
+		uploadTimeout: 0, //disable timeout while testing
+		debug: false, //debug logs
+	})
+);
 
 //Startpage
 app.get("/", login.checkNotAuthenticated, (req, res) => {
@@ -89,7 +91,6 @@ app.use("/", require("./routes/uploadRoutes"));
 
 //adds the downloadroutes to /
 app.use("/", require("./routes/downloadRoutes"));
-
 
 //Starts the server
 app.listen(port, () =>

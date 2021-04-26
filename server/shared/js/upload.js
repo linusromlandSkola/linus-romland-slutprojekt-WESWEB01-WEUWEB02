@@ -4,7 +4,7 @@ function uploadFile() {
 	if (
 		theFile.size > document.getElementById("maxFileSize").attributes[1].value
 	) {
-		console.log("you dum dum");
+		window.alert("That file is to large! Max 50MB!")
 	} else {
 		let formData = new FormData();
 		let xhr = new XMLHttpRequest();
@@ -24,11 +24,9 @@ function uploadFile() {
 		//runs when return from server
 		xhr.onreadystatechange = function () {
 			if (this.status == 201) {
-				console.log("File uploaded");
-				successView();
+				successView(this.response);
 			} else if (this.status == 500) {
-				errorView()
-				console.log("unkown error");
+				errorView();
 			}
 		};
 
@@ -59,15 +57,19 @@ function uploadFile() {
 	}
 }
 
-function successView() {
+function successView(id) {
 	document.getElementById("upload").style = "display:none;";
-	document.getElementById("cardtitle").innerText = "Your file \"" + theFile.name + "\" was succesfully uploaded!"
+	document.getElementById("cardtitle").innerText =
+		'Your file "' + theFile.name + '" was succesfully uploaded!';
 	document.getElementById("message").hidden = false;
+	console.log(id);
+	document.getElementById("downloadLink").href = "/download?file=" + id;
 }
 
 function errorView() {
 	document.getElementById("upload").style = "display:none;";
-	document.getElementById("errortitle").innerText = "Your file \"" + theFile.name + "\" was not uploaded!"
+	document.getElementById("errortitle").innerText =
+		'Your file "' + theFile.name + '" was not uploaded!';
 	document.getElementById("error").hidden = false;
 }
 
@@ -103,7 +105,6 @@ uploadBtn.onclick = () => {
 };
 
 fileField.onchange = () => {
-	console.log(fileField.files[0]);
 	if (fileField.files[0]) {
 		theFile = fileField.files[0];
 		changeContent();

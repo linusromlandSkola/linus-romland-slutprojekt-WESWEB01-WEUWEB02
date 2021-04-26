@@ -2,6 +2,8 @@ module.exports = (function () {
 	//Dependencies import
 	const express = require("express");
 	const router = express.Router();
+	const filesize = require("filesize");
+	const File = require("../models/File.js");
 	const login = require("../login.js");
 	const upload = require("../upload.js");
 	const database = require("../database.js");
@@ -16,23 +18,31 @@ module.exports = (function () {
 
 	router.post("/uploadFile", login.checkAuthenticated, async (req, res) => {
 		try {
-			let file = await req.files.file;
+			let fileFromUser = await req.files.file;
 			let user = await req.user;
 
-			let theFile = upload.createFile(
-				file.name,
-				file.md5,
+			let fileModel = upload.createFile(
+				fileFromUser.name,
+				fileFromUser.md5,
 				user.name,
 				req.body.title,
 				req.body.desc,
 				req.body.maxDownloads,
-				file.size
+				fileFromUser.size
 			);
-			database.saveToDB(theFile);
-			await req.files.file.mv("./uploaded/" + file.md5);
-			res.sendStatus(201);
+			await req.files.file.mv("./uploaded/" + fileFromUser.md5);
+			database.saveToDB(fileModel);
+			console.log(
+				`[NEW UPLOAD]\nThe user "${
+					user.name
+				}" uploaded a new file! \nFilename: "${
+					fileFromUser.name
+				}" Filesize: ${filesize(fileFromUser.size)}`
+			);
+			let id = fileModel._id + "" //this is ulgy but otherwise the fkn mongoid adds ""
+			res.status(201).send(id);
 		} catch (error) {
-			console.log(error)
+			console.log(error);
 			res.sendStatus(500);
 		}
 	});
