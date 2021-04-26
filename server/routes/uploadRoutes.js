@@ -23,14 +23,13 @@ module.exports = (function () {
 
 			let fileModel = upload.createFile(
 				fileFromUser.name,
-				fileFromUser.md5,
 				user.name,
 				req.body.title,
 				req.body.desc,
 				req.body.maxDownloads,
 				fileFromUser.size
 			);
-			await req.files.file.mv("./uploaded/" + fileFromUser.md5);
+			await req.files.file.mv("./uploaded/" + fileModel._id);
 			database.saveToDB(fileModel);
 			console.log(
 				`[NEW UPLOAD]\nThe user "${
