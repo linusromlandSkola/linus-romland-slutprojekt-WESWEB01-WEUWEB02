@@ -19,7 +19,7 @@ module.exports = (function () {
 
 	router.get("/downloadFile", async (req, res) => {
 		let file = await download.findFileWithID(File, req.query.file);
-		res.download("./uploaded/" + file.tmpName, file.fileName)
+		res.download("./uploaded/" + file.tmpName, file.fileName);
 	});
 
 	return router;

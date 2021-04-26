@@ -22,5 +22,4 @@ exports.saveToDB = (input) => {
 	input.save(() => {});
 };
 
-
 exports.db = db;

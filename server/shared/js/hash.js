@@ -40,7 +40,7 @@ function loginUser(name, password, errorBox) {
 		"Content-type",
 		"application/x-www-form-urlencoded"
 	);
-		//sends request to to server
+	//sends request to to server
 	request.send(`name=${name}&password=${pass}`);
 	request.onreadystatechange = function () {
 		// This is ugly and I want to change it

@@ -21,15 +21,13 @@ function uploadFile() {
 			document.getElementById("maxDownload").value
 		);
 
-		
-
 		//runs when return from server
 		xhr.onreadystatechange = function () {
 			if (this.status == 201) {
 				console.log("File uploaded");
-				successView(this.responseText);
+				successView(this.response);
 			} else if (this.status == 500) {
-				errorView()
+				errorView();
 				console.log("unkown error");
 			}
 		};
@@ -61,16 +59,19 @@ function uploadFile() {
 	}
 }
 
-function successView(md5) {
+function successView(id) {
 	document.getElementById("upload").style = "display:none;";
-	document.getElementById("cardtitle").innerText = "Your file \"" + theFile.name + "\" was succesfully uploaded!"
+	document.getElementById("cardtitle").innerText =
+		'Your file "' + theFile.name + '" was succesfully uploaded!';
 	document.getElementById("message").hidden = false;
-	document.getElementById("downloadLink").href = "/download?file=" + md5
+	console.log(id);
+	document.getElementById("downloadLink").href = "/download?file=" + id;
 }
 
 function errorView() {
 	document.getElementById("upload").style = "display:none;";
-	document.getElementById("errortitle").innerText = "Your file \"" + theFile.name + "\" was not uploaded!"
+	document.getElementById("errortitle").innerText =
+		'Your file "' + theFile.name + '" was not uploaded!';
 	document.getElementById("error").hidden = false;
 }
 
