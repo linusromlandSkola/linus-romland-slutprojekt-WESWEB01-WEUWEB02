@@ -17,7 +17,7 @@ Live Demo will be available once the project is actually somewhat usefull.
 
 ## Run it yourself:
 
-To test the server yourself you do this by first cloning the project to your computer (`git clone https://github.com/linusromland/FileUpload`). You then navigate to the folder named `server` using CMD or your Terminal.
+To test the server yourself you do this by first cloning the project to your computer (`git clone https://github.com/linusromland/FileUpload`). You then navigate to the folder named `server` using CMD or your Terminal. You first of all need to configure `.env`. Check `.env File` for more information.
 Run `npm i` to install required dependencies. Then you could start the server using one of the following commands:
 
 -  `npm run start` (This will start the server with forever)
@@ -28,7 +28,7 @@ You can also change setting with `.env`. For more information check `.env File`
 
 ## .env File
 
-Before you start the server, you need configure a few things in a file called `.env`.
+Before you start the server, you need to configure a few things in a file called `.env`.
 You need to create this file yourself and then you could copy the template below.
 Change the setting you would like and then it will automaticly use those settings instead
 of the default.
