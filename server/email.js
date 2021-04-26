@@ -4,6 +4,7 @@ const emailadress = process.env.EMAILADRESS;
 const password = process.env.PASSWORD;
 const domain = process.env.DOMAIN;
 
+//login in to gmail
 const transporter = nodemailer.createTransport({
 	service: "gmail",
 	auth: {
@@ -12,6 +13,7 @@ const transporter = nodemailer.createTransport({
 	},
 });
 
+//function that send verifaction email to user
 exports.sendVerificationEmail = (user) => {
 	let mailOptions = {
 		from: emailadress,

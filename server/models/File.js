@@ -7,10 +7,6 @@ const FileSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	tmpName: {
-		type: String,
-		required: true,
-	},
 	user: {
 		type: String,
 		required: true,
