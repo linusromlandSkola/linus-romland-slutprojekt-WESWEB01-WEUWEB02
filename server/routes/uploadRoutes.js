@@ -12,27 +12,30 @@ module.exports = (function () {
 	const fileSizeLimitMB =
 		process.env.FILESIZELIMITMB * 1024 * 1024 || 52428800;
 
-	router.get("/upload", login.checkAuthenticated, (req, res) => { //renders upload page with max file size
+	router.get("/upload", login.checkAuthenticated, (req, res) => { //Renders upload page with max file size
 		res.render("pages/upload", {
 			maxFileSize: fileSizeLimitMB,
 		});
 	});
 
 	router.post("/uploadFile", login.checkAuthenticated, async (req, res) => { //post request for the actual upload
+		//add check if fs if full
 		try {
 			let fileFromUser = await req.files.file; 
 			let user = await req.user;
+			let title = req.body.title || "no title" 
+			let desc = req.body.desc || "no description"
 
-			let fileModel = upload.createFile( //cretes mongoModel
+			let fileModel = upload.createFile( //Creates mongoModel
 				fileFromUser.name,
 				user.name,
-				req.body.title,
-				req.body.desc,
+				title,
+				desc,
 				req.body.maxDownloads,
 				fileFromUser.size
 			);
-			await req.files.file.mv("./uploaded/" + fileModel._id); //moves file from tmp to server
-			database.saveToDB(fileModel); //saves Model to DB
+			await req.files.file.mv("./uploaded/" + fileModel._id); //Moves file from tmp to server
+			database.saveToDB(fileModel); //Saves Model to DB
 			console.log(
 				`[NEW UPLOAD]\nThe user "${
 					user.name
