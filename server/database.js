@@ -14,9 +14,9 @@ exports.connect = (collectionname, connectURL) => {
 	});
 
 	db = mongoose.connection;
-	db.on("error", console.error.bind(console, "connection error:"));
+	db.on("error", console.error.bind(console, "Error while connecting to MongoDB using the following mongoURL: \"" + dbLink + "\""));
 	db.once("open", function () {
-		console.log("Connected to MongoDB using " + collectionname);
+		console.log("Connected to MongoDB using collection \"" + collectionname + "\"");
 	});
 };
 
