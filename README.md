@@ -1,4 +1,5 @@
 # FileUpload
+[![CI](https://github.com/linusromland/FileUpload/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/linusromland/FileUpload/actions/workflows/main.yml)
 
 **\* \***Currently in development**\* \***<br><br>
 Since Firefox Send is officially dead...
