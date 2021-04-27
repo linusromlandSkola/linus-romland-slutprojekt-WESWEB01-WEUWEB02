@@ -3,6 +3,8 @@ module.exports = (function () {
 	const express = require("express");
 	const router = express.Router();
 	const filesize = require("filesize");
+
+	//Local Dependencies
 	const File = require("../models/File.js");
 	const login = require("../login.js");
 	const upload = require("../upload.js");
@@ -16,7 +18,7 @@ module.exports = (function () {
 		});
 	});
 
-	router.post("/uploadFile", login.checkAuthenticated, async (req, res) => {
+	router.post("/uploadFile", login.checkAuthenticated, async (req, res) => { //post request for the actual upload
 		try {
 			let fileFromUser = await req.files.file; 
 			let user = await req.user;

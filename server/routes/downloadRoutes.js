@@ -3,8 +3,10 @@ module.exports = (function () {
 	const express = require("express");
 	const router = express.Router();
 	const fs = require("fs");
-	const download = require("../download.js");
 	const filesize = require("filesize");
+	
+	//Local Dependencies
+	const download = require("../download.js");
 	const File = require("../models/File.js");
 
 	router.get("/download", async (req, res) => { //renders download page with file information

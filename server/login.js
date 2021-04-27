@@ -1,9 +1,12 @@
-const User = require("./models/User.js");
+//Dependencies import
 const mongoose = require("mongoose");
 const ObjectID = require("mongodb").ObjectID;
+
+//Local Dependencies
+const User = require("./models/User.js");
 const email = require("./email.js");
 
-//checks if a user is authenticated with a valid session cookie
+//Checks if a user is authenticated with a valid session cookie
 exports.checkAuthenticated = async (req, res, next) => {
 	if (req.isAuthenticated()) {
 		return next();
@@ -11,7 +14,7 @@ exports.checkAuthenticated = async (req, res, next) => {
 	res.redirect("/login");
 };
 
-//checks if a user is authenticated with a valid session cookie and then rejects them
+//Checks if a user is authenticated with a valid session cookie and then rejects them
 exports.checkNotAuthenticated = (req, res, next) => {
 	if (req.isAuthenticated()) {
 		return res.redirect("/auth");
@@ -19,7 +22,7 @@ exports.checkNotAuthenticated = (req, res, next) => {
 	next();
 };
 
-//function to create a usermodel from information
+//Creates user from Model & inputs
 exports.createUser = (nameIN, emailIN, passIN) => {
 	return new User({
 		name: nameIN,

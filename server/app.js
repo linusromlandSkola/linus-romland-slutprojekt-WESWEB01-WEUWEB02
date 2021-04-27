@@ -19,7 +19,7 @@ const initializePassport = require("./config/passport.js");
 const User = require("./models/User.js");
 const checkAuthenticated = require("./login.js");
 
-//Variable Init
+//Variable Initialize
 const port = process.env.PORT || 3000;
 const mongoURL = process.env.MONGOURL || "mongodb://localhost:27017/";
 const fileSizeLimitMB = process.env.FILESIZELIMITMB * 1024 * 1024 || 52428800;

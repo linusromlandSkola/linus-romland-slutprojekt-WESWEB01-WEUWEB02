@@ -2,6 +2,8 @@ module.exports = (function () {
 	//Dependencies import
 	const express = require("express");
 	const router = express.Router();
+	
+	//Local Dependencies
 	const login = require("../login.js");
 	const User = require("../models/User.js");
 

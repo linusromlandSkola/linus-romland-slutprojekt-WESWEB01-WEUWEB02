@@ -1,10 +1,12 @@
+//Dependencies import
 const nodemailer = require("nodemailer");
 
+//Variable Initialize from .env
 const emailadress = process.env.EMAILADRESS;
 const password = process.env.PASSWORD;
 const domain = process.env.DOMAIN;
 
-//login in to gmail
+//Login in to Gmail
 const transporter = nodemailer.createTransport({
 	service: "gmail",
 	auth: {
@@ -13,7 +15,7 @@ const transporter = nodemailer.createTransport({
 	},
 });
 
-//function that send verifaction email to user
+//Sends verification email to user
 exports.sendVerificationEmail = (user) => {
 	let mailOptions = {
 		from: emailadress,
