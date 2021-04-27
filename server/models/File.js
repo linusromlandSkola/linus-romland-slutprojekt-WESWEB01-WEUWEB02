@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const ObjectID = require("mongodb").ObjectID;
 
 //Creates the FileSchema and exports it
 const FileSchema = new mongoose.Schema({

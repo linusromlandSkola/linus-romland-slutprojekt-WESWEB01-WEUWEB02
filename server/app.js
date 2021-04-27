@@ -1,14 +1,11 @@
 //Init of dotenv for use with .env file
 require("dotenv").config();
 
-console.log("FileUpload")
-
 //Dependencies import
 const express = require("express");
 const app = express();
 const session = require("express-session");
 const flash = require("express-flash");
-const sessionstore = require("sessionstore");
 const passport = require("passport");
 const MongoStore = require("connect-mongo");
 const fileUpload = require("express-fileupload");
