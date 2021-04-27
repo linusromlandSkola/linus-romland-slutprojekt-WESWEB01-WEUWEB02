@@ -49,7 +49,7 @@ exports.findUserWithID = async (Model, toFind) => {
 //takes input with type Model. Saves that model in Database. Cant be used before cnctDB.
 exports.saveToDB = (input) => {
 	email.sendVerificationEmail(input);
-	input.save(() => {});
+	input.save(() => { });
 };
 
 //sets verified to true (email is verifed)

@@ -4,7 +4,7 @@ module.exports = (function () {
 	const router = express.Router();
 	const fs = require("fs");
 	const filesize = require("filesize");
-	
+
 	//Local Dependencies
 	const download = require("../download.js");
 	const File = require("../models/File.js");

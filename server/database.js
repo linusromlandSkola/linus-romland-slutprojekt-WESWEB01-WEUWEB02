@@ -22,7 +22,7 @@ exports.connect = (collectionname, connectURL) => {
 
 //takes input with type Model. Saves that model in Database. Cant be used before connect.
 exports.saveToDB = (input) => {
-	input.save(() => {});
+	input.save(() => { });
 };
 
 exports.db = db;

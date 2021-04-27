@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Upload File - FileUpload</title>
-		<script src="/js/upload.js" defer></script>
-		<meta id="maxFileSize" maxFileSize="<%- maxFileSize %>" />
-		<link rel="stylesheet" href="style/upload.css" />
-		
-		<%- include('../partials/globalImport') %>
 
-	</head>
-	<body>
-		<%- include('../partials/navbar') %>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Upload File - FileUpload</title>
+	<script src="/js/upload.js" defer></script>
+	<meta id="maxFileSize" maxFileSize="<%- maxFileSize %>" />
+	<link rel="stylesheet" href="style/upload.css" />
+
+	<%- include('../partials/globalImport') %>
+
+</head>
+
+<body>
+	<%- include('../partials/navbar') %>
 
 		<div id="drop">Click or drop here to upload</div>
 		<section id="upload" class="container-fluid">
@@ -23,16 +25,9 @@
 						<div class="form-group">
 							<div class="input-group mb-3">
 								<div class="custom-file">
-									<input
-										class="custom-file-input"
-										id="fileField"
-										type="file"
-										size="52428800"
-										name="file"
-									/>
-									<label class="custom-file-label" id="fileName"
-										>Choose file</label
-									>
+									<input class="custom-file-input" id="fileField" type="file" size="52428800"
+										name="file" />
+									<label class="custom-file-label" id="fileName">Choose file</label>
 								</div>
 							</div>
 						</div>
@@ -48,11 +43,7 @@
 							<label for="maxDownlod">Max number of download:</label>
 							<input type="number" id="maxDownload" required />
 						</div>
-						<button
-							id="uploadBtn"
-							class="btn btn-primary btn-block"
-							type="submit"
-						>
+						<button id="uploadBtn" class="btn btn-primary btn-block" type="submit">
 							Upload
 						</button>
 					</div>
@@ -80,5 +71,6 @@
 				<p class="card-text">Unkown error occured!</p>
 			</div>
 		</div>
-	</body>
+</body>
+
 </html>

@@ -21,9 +21,9 @@ module.exports = (function () {
 	router.post("/uploadFile", login.checkAuthenticated, async (req, res) => { //post request for the actual upload
 		//add check if fs if full
 		try {
-			let fileFromUser = await req.files.file; 
+			let fileFromUser = await req.files.file;
 			let user = await req.user;
-			let title = req.body.title || "no title" 
+			let title = req.body.title || "no title"
 			let desc = req.body.desc || "no description"
 
 			let fileModel = upload.createFile( //Creates mongoModel
@@ -37,10 +37,8 @@ module.exports = (function () {
 			await req.files.file.mv("./uploaded/" + fileModel._id); //Moves file from tmp to server
 			database.saveToDB(fileModel); //Saves Model to DB
 			console.log(
-				`[NEW UPLOAD]\nThe user "${
-					user.name
-				}" uploaded a new file! \nFilename: "${
-					fileFromUser.name
+				`[NEW UPLOAD]\nThe user "${user.name
+				}" uploaded a new file! \nFilename: "${fileFromUser.name
 				}" Filesize: ${filesize(fileFromUser.size)}`
 			);
 			let id = fileModel._id + "" //this is ulgy but otherwise the fkn mongoid adds ""

@@ -35,7 +35,7 @@ function uploadFile() {
 			MBps =
 				e.loaded > 0
 					? ((e.loaded - d0) * 0.00000095367432) /
-					  ((performance.now() - t0) / 1000)
+					((performance.now() - t0) / 1000)
 					: 0;
 			let timeLeft = ((e.total - e.loaded) * 0.00000095367432) / MBps;
 			timeLeftHumanReadble =
