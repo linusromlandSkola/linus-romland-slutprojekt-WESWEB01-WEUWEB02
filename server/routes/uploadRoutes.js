@@ -19,6 +19,7 @@ module.exports = (function () {
 	});
 
 	router.post("/uploadFile", login.checkAuthenticated, async (req, res) => { //post request for the actual upload
+		//add check if fs if full
 		try {
 			let fileFromUser = await req.files.file; 
 			let user = await req.user;
