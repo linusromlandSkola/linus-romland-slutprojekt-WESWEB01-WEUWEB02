@@ -13,7 +13,7 @@ This will be a file upload page that allows you to upload any file and availble 
 
 ## Run it yourself:
 
-Check the [`wiki page`](https://github.com/linusromland/FileUpload/wiki/Running-the-Code)
+Check the [`Wiki`](https://github.com/linusromland/FileUpload/wiki/Running-the-Code) for information on how to run the code.
 
 # License
 
