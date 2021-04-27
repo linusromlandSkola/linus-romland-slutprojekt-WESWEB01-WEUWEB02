@@ -4,7 +4,6 @@ require("dotenv").config();
 //Dependencies import
 const express = require("express");
 const app = express();
-const fs = require("fs");
 const session = require("express-session");
 const flash = require("express-flash");
 const sessionstore = require("sessionstore");
