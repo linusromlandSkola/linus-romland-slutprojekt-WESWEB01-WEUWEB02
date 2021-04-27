@@ -4,6 +4,7 @@ tmp/
 !tmp/.gitkeep 
 uploaded/
 !uploaded/.gitkeep 
+.env
 
 # Logs
 logs

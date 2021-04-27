@@ -1,6 +1,8 @@
 //Init of dotenv for use with .env file
 require("dotenv").config();
 
+console.log("FileUpload")
+
 //Dependencies import
 const express = require("express");
 const app = express();
