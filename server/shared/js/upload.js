@@ -11,7 +11,8 @@ function uploadFile() {
 	if (	//checks if file is to large to upload
 		theFile.size > document.getElementById("maxFileSize").attributes[1].value
 	) {
-		window.alert("That file is to large! Max 50MB!");
+		let size = (document.getElementById("maxFileSize").attributes[1].value / 1024 / 1024).toFixed(0)
+		window.alert("That file is to large! Max " + size +"MB!");
 	} else {
 		let formData = new FormData();
 		let xhr = new XMLHttpRequest();
