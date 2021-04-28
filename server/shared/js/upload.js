@@ -1,10 +1,17 @@
 //Functions that send POST to server with file and calulates % and speed of upload
 function uploadFile() {
-	//checks if file is to large to upload
-	if (
+	let bar = document.getElementById("bar")
+	let eta = document.getElementById("eta")
+	document.getElementById("upload").style = "display:none;";
+	eta.hidden = false
+
+	let arrayOfBirate = [];
+	let timeLeftHumanReadble;
+
+	if (	//checks if file is to large to upload
 		theFile.size > document.getElementById("maxFileSize").attributes[1].value
 	) {
-		window.alert("That file is to large! Max 50MB!")
+		window.alert("That file is to large! Max 50MB!");
 	} else {
 		let formData = new FormData();
 		let xhr = new XMLHttpRequest();
@@ -32,20 +39,41 @@ function uploadFile() {
 
 		//runs during upload and calulates % & speed
 		xhr.upload.onprogress = function (e) {
+
 			MBps =
 				e.loaded > 0
 					? ((e.loaded - d0) * 0.00000095367432) /
-					((performance.now() - t0) / 1000)
+					  ((performance.now() - t0) / 1000)
 					: 0;
+
+			if (arrayOfBirate.length > 19) arrayOfBirate.shift();
+
+			arrayOfBirate.push(MBps);
+
+			MBps =
+				arrayOfBirate.reduce((a, b) => {
+					return a + b;
+				}) / arrayOfBirate.length;
+
 			let timeLeft = ((e.total - e.loaded) * 0.00000095367432) / MBps;
+
 			timeLeftHumanReadble =
 				timeLeft > 60
 					? (timeLeft / 60).toFixed(1) + "m"
 					: timeLeft.toFixed(1) + "s";
 
-			console.log((e.loaded / e.total) * 100);
+			//console.log(e.loaded / e.total * 100);
 			var length = (e.loaded / e.total) * 100;
 			var whats_left = 100 - length;
+
+			document.getElementById("timeleft").innerText = timeLeftHumanReadble + " remaining"
+			document.getElementById("mbps").innerText = MBps.toFixed(2) + " MB/s"
+
+			let innerBar = document.getElementById("innerBar");
+
+			innerBar.style.width = length + "%";
+
+			innerBar.style.transition = "all " + 0.5 + "s";
 
 			t0 = performance.now();
 			d0 = e.loaded;
@@ -58,6 +86,7 @@ function uploadFile() {
 }
 
 function successView(id) {
+	document.getElementById("eta").style = "display:none";
 	document.getElementById("upload").style = "display:none;";
 	document.getElementById("cardtitle").innerText =
 		'Your file "' + theFile.name + '" was succesfully uploaded!';
@@ -67,6 +96,7 @@ function successView(id) {
 }
 
 function errorView() {
+	document.getElementById("eta").style = "display:none";
 	document.getElementById("upload").style = "display:none;";
 	document.getElementById("errortitle").innerText =
 		'Your file "' + theFile.name + '" was not uploaded!';
