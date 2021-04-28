@@ -46,6 +46,7 @@ module.exports = (function () {
 		} else {
 			res.render("pages/verifyEmail", {
 				user: user,
+				loggedIn: req.user
 			});
 		}
 	});
