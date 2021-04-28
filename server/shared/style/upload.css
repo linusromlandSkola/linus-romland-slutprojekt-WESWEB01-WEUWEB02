@@ -24,6 +24,14 @@ body {
 	background-color: rgb(92, 91, 91);
 }
 
+#bar{
+	height: 3rem;
+	width: 50%;
+	margin: 0 auto; 
+	float: none; 
+	margin-bottom: 10px; 
+}
+
 #message,
 #error {
 	background-color: rgb(92, 91, 91);
