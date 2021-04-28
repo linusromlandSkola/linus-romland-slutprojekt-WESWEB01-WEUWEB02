@@ -18,8 +18,8 @@ module.exports = (function () {
 			if (userExist == null && userEmailExist == null) {
 				login.saveToDB(
 					login.createUser(
-						req.body.name,
-						req.body.email,
+						req.body.name.toLowerCase(),
+						req.body.email.toLowerCase(),
 						req.body.password
 					)
 				);

@@ -8,6 +8,7 @@ const User = require("../models/User.js");
 function initialize(passport) {
 	const authenticateUser = async (name, password, done) => {
 		const user = await dbModule.findInDBOne(User, name);
+		name = name.toLowerCase()
 		if (user == null) { //checks if the username is null
 			return done(null, false, { message: "No user with that name" });
 		}
