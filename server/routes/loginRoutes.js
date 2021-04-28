@@ -7,7 +7,7 @@ module.exports = (function () {
 	const login = require("../login.js");
 	const User = require("../models/User.js");
 
-	router.post("/register", async (req, res) => {
+	router.post("/register", login.checkNotAuthenticated, async (req, res) => {
 		try {
 			//checks if the username exists in the database.
 			const userExist = await login.findInDBOne(User, req.body.name);
@@ -51,14 +51,18 @@ module.exports = (function () {
 	});
 
 	router.get("/register", login.checkNotAuthenticated, (req, res) => {
-		res.render("pages/register");
+		res.render("pages/register", {
+			loggedIn: false
+		});
 	});
 
 	router.get("/login", login.checkNotAuthenticated, (req, res) => {
-		res.render("pages/login");
+		res.render("pages/login", {
+			loggedIn: false
+		});
 	});
 
-	router.get("/verifyAccount", async (req, res) => {
+	router.get("/verifyAccount", login.checkAuthenticated, async (req, res) => {
 		//updates bool on db to verified
 		login.verifyUser(User, req.query.user);
 		res.render("pages/verified", {
@@ -69,7 +73,7 @@ module.exports = (function () {
 	router.get("/logout", login.checkAuthenticated, (req, res) => {
 		//removes your session token and logs you out.
 		req.logOut();
-		res.send("You are now logged out");
+		res.redirect("/");
 	});
 
 	return router;

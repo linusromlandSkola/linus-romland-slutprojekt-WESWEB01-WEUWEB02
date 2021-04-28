@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Download file - FileUpload</title>
+		<link rel="stylesheet" href="style/cover.css" />
+		<%- include('../partials/globalImport') %>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Download file - FileUpload</title>
+		<link rel="stylesheet" href="style/download.css">
+		<script>
+			function downloadButton() {
+				window.location = "<%- downloadLink%>"
+			}
+		</script>
+	</head>
 
-	<%- include('../partials/globalImport') %>
-
-</head>
-
-<body>
-	<%- include('../partials/navbar') %>
-
-		<div id="downloadSquare">
-			<h1>FileUpload</h1>
-			<h2>
-				<%- title %>
-					</h3>
-					<h3>
-						<%- desc %>
-					</h3>
-					<p>File: "<%- filename %>"</p>
-					<p>Size: <%- fileSize %>
-					</p>
-					<a href="<%- downloadLink%>">Download</a>
-					<p>
-						Disclaimer: Romland.Space and/or FileUpload have not checked the
-						file and cannot stand for it's content. Do not open a file you don't
-						trust
-					</p>
-		</div>
-</body>
-
+	<body>
+		<%- include('../partials/navbar') %>
+		<section class="cover">
+			<div class="container">
+				<div class="col-md-12">
+					<div class="card text-left p-3" id="downloadSquare">
+						<h2><%- title %></h2>
+						<h4><%- desc %></h4>
+						<br />
+						<p>File: "<%- filename %>"</p>
+						<p>Size: <%- fileSize %></p>
+						<button type="button" onclick="downloadButton()" class="btn btn-primary btn-lg">Download</button>
+						<p>
+							Disclaimer: Romland.Space and/or FileUpload have not
+							checked the file and cannot stand for it's content. Do not
+							open a file you don't trust
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>

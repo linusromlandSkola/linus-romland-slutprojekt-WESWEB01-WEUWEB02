@@ -1,6 +1,5 @@
 body {
 	background: #4e4f50;
-	padding-top: 10vh;
 }
 .form-container {
 	border-radius: 10px;
@@ -22,6 +21,16 @@ body {
 	user-select: none;
 	cursor: pointer;
 	transition: background-color 0.15s, border 0.05s;
+	background-color: rgb(92, 91, 91);
+}
+
+#message,
+#error {
+	background-color: rgb(92, 91, 91);
+	width: 50%;
+	margin: 0 auto; 
+	float: none; 
+	margin-bottom: 10px; 
 }
 
 #drop.dragover {

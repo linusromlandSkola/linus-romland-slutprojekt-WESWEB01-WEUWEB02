@@ -15,6 +15,7 @@ module.exports = (function () {
 	router.get("/upload", login.checkAuthenticated, (req, res) => { //Renders upload page with max file size
 		res.render("pages/upload", {
 			maxFileSize: fileSizeLimitMB,
+			loggedIn: true
 		});
 	});
 

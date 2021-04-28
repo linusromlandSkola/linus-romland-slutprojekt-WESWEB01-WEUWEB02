@@ -66,8 +66,10 @@ app.use(
 );
 
 //Startpage
-app.get("/", login.checkNotAuthenticated, (req, res) => {
-	res.render("pages/index");
+app.get("/", (req, res) => {
+	res.render("pages/index", {
+		loggedIn: req.user
+	});
 });
 
 //Login Post Request (Needs passport)

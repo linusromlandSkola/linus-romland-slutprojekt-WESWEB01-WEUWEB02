@@ -1,76 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Upload File - FileUpload</title>
+		<script src="/js/upload.js" defer></script>
+		<meta id="maxFileSize" maxFileSize="<%- maxFileSize %>" />
+		<link rel="stylesheet" href="style/upload.css" />
+		<link rel="stylesheet" href="style/cover.css" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Upload File - FileUpload</title>
-	<script src="/js/upload.js" defer></script>
-	<meta id="maxFileSize" maxFileSize="<%- maxFileSize %>" />
-	<link rel="stylesheet" href="style/upload.css" />
+		<%- include('../partials/globalImport') %>
+	</head>
 
-	<%- include('../partials/globalImport') %>
-
-</head>
-
-<body>
-	<%- include('../partials/navbar') %>
-
-		<div id="drop">Click or drop here to upload</div>
-		<section id="upload" class="container-fluid">
-			<section class="row justify-content-center">
-				<section class="col-12 col-sm-6 col-md-3">
-					<div class="form-container" id="fakeForm" hidden>
-						<div class="form-group">
-							<div class="input-group mb-3">
-								<div class="custom-file">
-									<input class="custom-file-input" id="fileField" type="file" size="52428800"
-										name="file" />
-									<label class="custom-file-label" id="fileName">Choose file</label>
+	<body>
+		<%- include('../partials/navbar') %>
+		<section class="cover">
+			<div class="container text-center">
+				<div class="col-md-12">
+					<div id="drop">Click or drop here to upload</div>
+					<section id="upload" class="container-fluid">
+						<section class="row justify-content-center">
+							<section class="col-12 col-sm-6 col-md-3">
+								<div class="form-container text-left" id="fakeForm" hidden>
+									<div class="form-group">
+										<div class="input-group mb-3">
+											<div class="custom-file">
+												<input
+													class="custom-file-input"
+													id="fileField"
+													type="file"
+													size="52428800"
+													name="file"
+												/>
+												<label
+													class="custom-file-label"
+													id="fileName"
+													>Choose file</label
+												>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="Title">Title:</label>
+										<input type="text" id="Title" required />
+									</div>
+									<div class="form-group">
+										<label for="Description">Description:</label>
+										<input type="text" id="Description" required />
+									</div>
+									<div class="form-group">
+										<label for="maxDownlod"
+											>Max number of download:</label
+										>
+										<input type="number" id="maxDownload" value=5 required />
+									</div>
+									<button
+										id="uploadBtn"
+										class="btn btn-primary btn-block"
+										type="submit"
+									>
+										Upload
+									</button>
 								</div>
-							</div>
+							</section>
+						</section>
+					</section>
+					<div id="message" hidden class="card">
+						<div class="card-header">Upload</div>
+						<div class="card-body">
+							<h5 id="cardtitle" class="card-title">
+								Your file was succesfully uploaded!
+							</h5>
+							<p class="card-text">
+								You can download the file from the following link:.
+							</p>
+							<a href="#" id="downloadLink" class="btn btn-primary"
+								>Download</a
+							>
 						</div>
-						<div class="form-group">
-							<label for="Title">Title:</label>
-							<input type="text" id="Title" required />
-						</div>
-						<div class="form-group">
-							<label for="Description">Description:</label>
-							<input type="text" id="Description" required />
-						</div>
-						<div class="form-group">
-							<label for="maxDownlod">Max number of download:</label>
-							<input type="number" id="maxDownload" required />
-						</div>
-						<button id="uploadBtn" class="btn btn-primary btn-block" type="submit">
-							Upload
-						</button>
 					</div>
-				</section>
-			</section>
+					<div id="error" hidden class="card">
+						<div class="card-header">Upload</div>
+						<div class="card-body">
+							<h5 id="errortitle" class="card-title">
+								Your file was not uploaded!
+							</h5>
+							<p class="card-text">Unkown error occured!</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
-		<div id="message" hidden class="card">
-			<div class="card-header">Upload</div>
-			<div class="card-body">
-				<h5 id="cardtitle" class="card-title">
-					Your file was succesfully uploaded!
-				</h5>
-				<p class="card-text">
-					You can download the file from the following link:.
-				</p>
-				<a href="#" id="downloadLink" class="btn btn-primary">Download</a>
-			</div>
-		</div>
-		<div id="error" hidden class="card">
-			<div class="card-header">Upload</div>
-			<div class="card-body">
-				<h5 id="errortitle" class="card-title">
-					Your file was not uploaded!
-				</h5>
-				<p class="card-text">Unkown error occured!</p>
-			</div>
-		</div>
-</body>
-
+	</body>
 </html>

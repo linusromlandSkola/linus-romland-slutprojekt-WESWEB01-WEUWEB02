@@ -18,6 +18,7 @@ module.exports = (function () {
 				filename: file.fileName,
 				fileSize: filesize(file.fileSize),
 				downloadLink: "/downloadFile?file=" + req.query.file,
+				loggedIn: req.user
 			});
 		} else { //if file not found with that id redirict to /
 			res.redirect("/");
