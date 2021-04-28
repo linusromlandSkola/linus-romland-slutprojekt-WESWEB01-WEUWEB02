@@ -67,6 +67,7 @@ module.exports = (function () {
 		login.verifyUser(User, req.query.user);
 		res.render("pages/verified", {
 			user: await login.findUserWithID(User, req.query.user),
+			loggedIn: req.user
 		});
 	});
 
