@@ -1,7 +1,6 @@
 # FileUpload
 [![CI](https://github.com/linusromland/FileUpload/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/linusromland/FileUpload/actions/workflows/node.js.yml)
 
-**\* \***Currently in development**\* \***<br><br>
 Since Firefox Send is officially dead...
 
 ## Planing
