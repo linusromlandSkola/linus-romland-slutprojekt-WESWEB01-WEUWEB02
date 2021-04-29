@@ -20,9 +20,7 @@ function registerUser(username, password, errorBox, infoBox, email) {
 		} else if (request.status == 500) {
 			errorBox.innerText = "Error occured!";
 		} else if (request.status == 201) {
-			infoBox.innerText = "Created user";
-			errorBox.innerText = "";
-			window.location = "/";
+			window.location = "/login";
 			return;
 		} else {
 			errorBox.innerText = "Unknown error";

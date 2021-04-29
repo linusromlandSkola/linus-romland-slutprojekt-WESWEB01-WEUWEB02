@@ -63,7 +63,7 @@ module.exports = (function () {
 		});
 	});
 
-	router.get("/verifyAccount", login.checkAuthenticated, async (req, res) => {
+	router.get("/verifyAccount", async (req, res) => {
 		//updates bool on db to verified
 		login.verifyUser(User, req.query.user);
 		res.render("pages/verified", {

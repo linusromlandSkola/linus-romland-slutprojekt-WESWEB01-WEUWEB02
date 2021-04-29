@@ -17,6 +17,8 @@ module.exports = (function () {
 				desc: file.desc,
 				filename: file.fileName,
 				fileSize: filesize(file.fileSize),
+				downloads: file.currentDownloads,
+				maxDownloads: file.maxDownloads,
 				downloadLink: "/downloadFile?file=" + req.query.file,
 				loggedIn: req.user
 			});
