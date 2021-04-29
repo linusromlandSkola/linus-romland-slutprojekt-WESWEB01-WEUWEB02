@@ -1,13 +1,11 @@
-body{
-	background: #4e4f50;
-	padding-top: 10vh;	
-}
+
 form{
 	background: #fff;
 }
 .form-container{
 	border-radius: 10px;
 	padding: 30px;
+	background-color: rgb(92, 91, 91);
 }
 
 #errorText{
