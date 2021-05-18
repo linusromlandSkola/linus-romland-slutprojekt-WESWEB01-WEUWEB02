@@ -1,3 +1,4 @@
+**Note**: This is a fork used for school, for checking the continuation of the project check out the real [`GitHub Page`](https://github.com/linusromland/FileUpload/).
 # FileUpload
 [![CI](https://github.com/linusromland/FileUpload/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/linusromland/FileUpload/actions/workflows/node.js.yml)
 
